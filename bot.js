@@ -27,3 +27,10 @@ client.on('message', message => {
 // THIS  MUST  BE  THIS  WAY
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+
+
+client.on('message', message => {
+    if(message.content.startWith("$ping"))
+            message.channel.send(new Date()
+                                 }
+                                 }
