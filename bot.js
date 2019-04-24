@@ -14,9 +14,9 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-    if (message.content === '@Awebot9868') {
+    if (message.content === 'ping') {
 
-       message.reply('How can i help?');
+       message.reply('pong');
 
        }
 
@@ -27,3 +27,9 @@ client.on('message', message => {
 // THIS  MUST  BE  THIS  WAY
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+
+client.on('message', message => {
+    if(message.content.startsWith("$ping")) {
+            message.channel.send('Pong! Your ping is ' +${Date.now() - message.createdTimestamp}+ ' ms');
+}
+    });
