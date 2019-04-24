@@ -14,9 +14,9 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-    if (message.content === 'ping') {
+    if (message.content === '@Awebot9868') {
 
-       message.reply('pong');
+       message.reply('How can i help?');
 
        }
 
