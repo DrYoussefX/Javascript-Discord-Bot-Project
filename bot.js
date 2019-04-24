@@ -13,7 +13,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if(message.content.startsWith("$ping")) {
+    if(message.content.startsWith(prefix + "ping")) {
             message.channel.send('Pong! Your ping is ' +${Date.now() - message.createdTimestamp}+ ' ms');
 }
     });
