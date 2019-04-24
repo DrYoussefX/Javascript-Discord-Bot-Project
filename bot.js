@@ -20,11 +20,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-    message.delete(message.content.replace(/asshole/gi))
-    .catch(console.error);
-});
-   
+
 
 client.on('message', message => {
 
