@@ -12,11 +12,13 @@ client.on('ready', () => {
 
 });
 
+
 client.on('message', message => {
     if(message.content.startsWith(prefix + "ping")) {
             message.channel.send('Pong! Your ping is `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
 }
     });
+
 
 client.on('message', message => {
   
@@ -28,6 +30,13 @@ client.on('message', message => {
    
     }
 
+});
+
+
+client.on('message', message => {
+    if (message.content.includes("@Awebot9868")) {
+       message.reply("Here! :slight_smile:")
+    }
 });
 
 
