@@ -22,7 +22,7 @@ client.on('message', message => {
 
 client.on('message', message => {
   
-     if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes(كسم) || message.content.includes(متناك) || message.content.includes(شرموط)) {
+     if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك")) {
     
        message.delete(100)
                         
