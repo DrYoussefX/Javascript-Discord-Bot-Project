@@ -56,6 +56,7 @@ client.on('message', message => {
     var text = message.content.split(' ').slice(1).join (' ')
     if (!text) return message.reply('Say what? I didnt hear you.')
     message.channel.send(text)
+    message.delete(100)
    }
 });
 
