@@ -34,7 +34,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content.includes("@Awebot9868")) {
+    if (message.content.includes("@Awebot")) {
        message.reply("Here! :slight_smile:")
     }
 });
