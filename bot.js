@@ -50,7 +50,15 @@ client.on('message', message => {
 
 });
 
- 
+
+client.on('message', message => {
+   if (message.content.startsWith(prefix + "say")) {
+    var text = message.content.split(' ').slice(1).join (' ')
+    if (!text) return message.reply('Say what? I didnt hear you.')
+    message.channel.send(text)
+   }
+});
+
 
 // THIS  MUST  BE  THIS  WAY
 
