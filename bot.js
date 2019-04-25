@@ -35,7 +35,7 @@ client.on('message', message => {
 
  
 client.on('message', message => {
-    if (message.isMentioned(client.user)) {
+    if (message.isMentvrsaioned(client.user)) {
        message.reply("Here! :slight_smile:")
     }
 });
