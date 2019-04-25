@@ -34,7 +34,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content.includes("@Awebot")) {
+    if (message.isMentioned(client.user)) {
        message.reply("Here! :slight_smile:")
     }
 });
