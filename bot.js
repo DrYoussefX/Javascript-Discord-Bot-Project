@@ -32,8 +32,7 @@ client.on('message', message => {
 
 });
 
-
-if(cmd === `${prefix}kick`){
+if(message.channel.statrtsWith("$kick")) {
  
  
    let kuser = messade.guild.member(message.mention.users.first() || message.guild.members.get(args[0]));
@@ -43,22 +42,23 @@ if(cmd === `${prefix}kick`){
    if(kuser.hasPermission("MANAGE_CHANNELS")) return message.channel.send("Can't do that to him bro.");
  
    let kickembed = new Discord.RichEmbed()
-   .setDescription("**KICK**")
+   .setDescription("KICK")
    .setColor("#1009c4")
-   .addField("Kicked User", `${kuser} with ID ${kuser.id}`)
-   .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
+   .addField("Kicked User", ${kuser} with ID ${kuser.id})
+   .addField("Kicked By", <@${message.author.id}> with ID ${message.author.id})
    .addField("Kicked In", message.channel)
    .addField("Time", message.createedAt)
    .addField("Reason", kreason);
  
-   let kickchannel = message.guild.channels.find(`name`, "accidents");
+   let kickchannel = message.guild.channels.find(name, "accidents");
    if(!kickchannel) return message.channel.send("Can't seem to find Accidents channel");
  
    message.guild.member(kuser).kick(kreason)
    kickchannel.send(kickembed);
-   
+
    return;
 }
+
  
 client.on('message', message => {
     if (message.isMentioned(client.user)) {
