@@ -19,7 +19,10 @@ client.on('message', message => {
     });
 
 
-
+ if (message.content.includes("shit")) {
+  message.delete(1000)
+  message.reply("No swearing allowed, Swear deleted :slight_smile:")
+ }
 
 
 client.on('message', message => {
