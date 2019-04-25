@@ -40,16 +40,6 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-
-    if (message.content === 'ping') {
-
-       message.reply('pong');
-
-       }
-
-});
-
 
 client.on('message', message => {
    if (message.content.startsWith(prefix + "say")) {
