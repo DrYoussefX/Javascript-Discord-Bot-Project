@@ -187,7 +187,7 @@ client.on('message', message => {
     
        message.delete(100)
                         
-       message.reply(`Swearing detected, ${message.author.username} was kicked for having three warns.)
+       message.reply(`Swearing detected, ${message.author.username} was kicked for having three warns.`)
        message.member.kick()
        }
        }
