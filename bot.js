@@ -159,10 +159,17 @@ client.on('message', message => {
        message.delete(100)
                         
        message.reply("No swearing allowed, Swear deleted :slight_smile:, you were given the first warning.")
-       } else if message.members.roles.some(role => role.name === 'warnx1')) {
-     	message.member.addRole(message.guild.roles.find(c => c.name == "warnx2")); 
-     	
-     	message.delete(100)
+       }
+       }
+});
+
+client.on('message', message => {
+  
+     if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
+     if (message.member.roles.some(role => role.name === 'warnx1')) {
+     	message.member.addRole(message.guild.roles.find(c => c.name == "warnx2"));
+    
+       message.delete(100)
                         
        message.reply("No swearing allowed, Swear deleted :slight_smile:, you were given the second warning.")
        }
