@@ -21,28 +21,6 @@ client.channels.get('572137978365739010').send(` ${message.author} has submitted
 }
 });
 
-client.on('message', message => {
-var msgArray = message.content.split(" ");
-var args = msgArray.slice(1);
-var warnUser = message.mentions.members.first();
-var warnReason = args.join(" ").slice(22);
-const embedsi = new Discord.RichEmbed()
-.setColor('#32CD32')
- .setAuthor('Twoon BOT')
- .setTitle('Recent warn')
- .addField(`${warnUser} has been warned by ${message.author.username}`, `Reason : "${warnReason}"`)
- .setTimestamp()
- .setFooter('Neo programmed by Jesse')
-if (message.content.startsWith(prefix + "warn")) {
-	if (message.member.roles.some(role => role.name === 'Mod')) {
-message.channel.send(`${warnUser} was successfully warned :white_check_mark:`);
-client.channels.get('572129682552520704').send(`__**Recent Warnings**__ : \nMember ${warnUser} was warned by Moderator **${message.author.username}** for **"${warnReason} "**`);
-} else { 
-message.reply("No! you are not a mod <:angrycowboy:569627380084375573>");
-}
-}
-});
-
  client.on("message", message => {
    var embedfoo = new Discord.RichEmbed()
    .setAuthor('Twoon BOT', 'https://steembottracker.com/img/bot_logo.png')		
