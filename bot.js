@@ -98,7 +98,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setAuthor('Twoon BOT')
  .setTitle('Help list')
  .addField('Commands')
- .addDescription('Use -ping to check your ping!')
+ .setDescription('Use -ping to check your ping!')
  .setTimestamp()
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
  var embedth = new Discord.RichEmbed()
