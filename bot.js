@@ -165,7 +165,7 @@ client.on('message', message => {
        }
 });
 
-client.on('message', message => {
+client.on('message', message => { 
   
      if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
      	if (message.member.roles.some(role => role.name === 'warnx2')) return;
