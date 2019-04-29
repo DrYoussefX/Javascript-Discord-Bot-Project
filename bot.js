@@ -193,17 +193,21 @@ client.on('message', message => {
 client.on('message', message => {
   
      if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
+     	let r = message.member.roles.some(role => role.name === 'warnx3');
      	if (message.member.roles.some(role => role.name === 'warnx3')) return;
      if (message.member.roles.some(role => role.name === 'warnx2')) {
      	message.member.addRole(message.guild.roles.find(c => c.name == "warnx3"));
     
        message.delete(100)
+       message.member.removeRole(r)
                         
        message.reply(`Swearing detected, ${message.author.username} was kicked for having three warns.`)
        message.member.kick()
        }
        }
 });
+
+
 
 
 
