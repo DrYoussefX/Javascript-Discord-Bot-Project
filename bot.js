@@ -123,6 +123,18 @@ message.reply("you do not have permissions to use this command")
 }
     }
 });
+
+client.on("message", message=> {
+    if (message.content.startsWith(prefix + "clearall")) {
+if (message.member.roles.some(role => role.name === 'Mod')) {
+     message.channel.bulkDelete(100);
+message.channel.send(" all messages successfully deleted :white_check_mark:");
+message.channel.bulkDelete(1);
+} else {
+message.reply("you do not have permissions to use this command")
+}
+    }
+});
  
 client.on("message", message=> {
  var embedfi = new Discord.RichEmbed()
