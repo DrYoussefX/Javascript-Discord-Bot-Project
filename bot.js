@@ -28,7 +28,7 @@ var warnUser = message.guild.member(message.mentions.users.first());
 var warnReason = args.join(" ").slice(22);
 const embedsi = new Discord.RichEmbed()
 .setColor('#32CD32')
- .setAuthor('Neo BOT')
+ .setAuthor('Twoon BOT')
  .setTitle('Recent warn')
  .addField(`${warnUser} has been warned by ${message.author.username}`, `Reason : "${warnReason}"`)
  .setTimestamp()
@@ -45,12 +45,12 @@ message.reply("No! you are not a mod <:angrycowboy:569627380084375573>");
 
  client.on("message", message => {
    var embedfoo = new Discord.RichEmbed()
-   .setAuthor('Neo BOT', 'https://steembottracker.com/img/bot_logo.png')		
+   .setAuthor('Twoon BOT', 'https://steembottracker.com/img/bot_logo.png')		
    .setTitle('Echo!')		
    .setColor('#0099ff')		
    .setDescription(message.content.replace('-echoembed', ''))		
    .setTimestamp()		
-   .setFooter('Neo bot programmed by Jesse')
+   .setFooter('Twoon bot programmed by Jesse & Awebdo')
   if (message.content.startsWith("-echoembed")) {		
    if (message.member.roles.some(role => role.name === 'Dev')) {
    message.delete(1000)		
@@ -95,11 +95,11 @@ message.channel.send(`${message.author.username} was successfully verified :whit
          client.on("message", message=> {
  var embedth = new Discord.RichEmbed()
  .setColor('#32CD32')
- .setAuthor('Neo BOT')
+ .setAuthor('Twoon BOT')
  .setTitle('Help command')
  .addField('Help list sent using a private message :white_check_mark:', 'Wanna take a look on the rules? Use -rules command :wink:')
  .setTimestamp()
- .setFooter('Neo programmed by Jesse')
+ .setFooter('Twoon BOT programmed by Jesse & Awebdo')
  if (message.content.startsWith(prefix + "help")) {
 	 if (message.channel.id === '572057152559120394') {
   message.react('✅');
@@ -127,8 +127,8 @@ message.reply("you do not have permissions to use this command")
 client.on("message", message=> {
  var embedfi = new Discord.RichEmbed()
  .setColor('#FF0000')
- .setAuthor('Neo BOT', 'https://steembottracker.com/img/bot_logo.png')
- .setFooter('Neo programmed by Jesse')
+ .setAuthor('Twoon BOT', 'https://steembottracker.com/img/bot_logo.png')
+ .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
  .addField('Version 0.1', 'Server moderation with multiple features')
  .addField('Wanna take a look on server commands? Use -help command. :wink:', 'Use -rules to get the server rules DMed :wink:')
@@ -153,10 +153,13 @@ client.on('message', message => {
 client.on('message', message => {
   
      if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
+     if (message.member.roles.some(role => role.name !== 'Warn x1')) {
+     	message.member.addRole(message.guild.roles.find(c => c.name == "Warn x1"));
     
        message.delete(100)
                         
        message.reply("No swearing allowed, Swear deleted :slight_smile:")
+       }
    
     }
 
