@@ -93,11 +93,13 @@ message.channel.send(`${message.author.username} was successfully verified :whit
 	    })
        
          client.on("message", message=> {
-var embedfh = new Discord.RichEmbed()
-.setAuthor('Bla Bla')
-.setDescription('Bla Bla')
-.setTitle('Bla Bla')
-.setTimestamp()
+ var embedfh = new Discord.RichEmbed()
+ .setColor('#0099ff')	
+ .setAuthor('Twoon BOT')
+ .setTitle('Help list')
+ .addField('Use -ping to know your ping!')
+ .setTimestamp()
+ .setFooter('Twoon BOT programmed by Jesse & Awebdo')
  var embedth = new Discord.RichEmbed()
  .setColor('#32CD32')
  .setAuthor('Twoon BOT')
@@ -108,7 +110,7 @@ var embedfh = new Discord.RichEmbed()
  if (message.content.startsWith(prefix + "help")) {
 	 if (message.channel.id === '572057152559120394') {
   message.react('✅');
-  message.author.sendEmbed(embedfh)
+  message.author.sendEmbed(embedfh);
   message.channel.sendEmbed(embedth);
  
        } else {
