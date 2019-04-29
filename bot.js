@@ -129,7 +129,7 @@ client.on("message", message=> {
  .setAuthor('Twoon BOT', 'https://steembottracker.com/img/bot_logo.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.1', 'Server moderation with multiple features')
+ .addField('Version 0.8', 'Server moderation with multiple features')
  .addField('Wanna take a look on server commands? Use -help command. :wink:', 'Use -rules to get the server rules DMed :wink:')
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.id === '572057152559120394') {
