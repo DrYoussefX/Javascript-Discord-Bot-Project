@@ -75,7 +75,7 @@ message.reply("No! you are not a mod <:angrycowboy:569627380084375573>");
      message.channel.send(`Please type the following number : **${num}**`).then(m => {     
          message.channel.awaitMessages(res => res.content == `${num}`, {       
            max: 1,     
-           time: 60000,    
+           time: 30000,    
            errors: ['time'],       
          }).then(collected => {    
           message.channel.bulkDelete(3)
@@ -85,7 +85,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  
  
           }).catch(() => {     
-           m.edit(`You took to long to type the number.\nRe-type the command again if you want to verify yourself.`).then(m2 => m.delete(15000));     
+           m.edit(`You took too long to type the number.\nRe-type the command again if you want to verify yourself.`).then(m2 => m.delete(15000));     
        });
 	    })
 		      }
@@ -103,7 +103,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  if (message.content.startsWith(prefix + "help")) {
 	 if (message.channel.id === '572057152559120394') {
   message.react('✅');
-  message.author.sendMessage(" Help list - to be edited. ");
+  message.author.sendEmbed(embedfh);
   message.channel.sendEmbed(embedth);
  
        } else {
@@ -195,33 +195,15 @@ client.on('message', message => {
      if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
      	if (message.member.roles.some(role => role.name === 'warnx3')) return;
      if (message.member.roles.some(role => role.name === 'warnx2')) {
-     	message.member.addRole(message.guild.roles.find(c => c.name == "warnx3"))
+     	message.member.addRole(message.guild.roles.find(c => c.name == "warnx3"));
     
        message.delete(100)
-                           message.reply(`Swearing detected, ${message.author.username} was kicked for having three warns.`)
+                        
+       message.reply(`Swearing detected, ${message.author.username} was kicked for having three warns.`)
        message.member.kick()
        }
        }
 });
-client.on('message', message => {
-  
-     if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
-     	
-     	if(message.member.roles.some(role => role.name === 'warnx3')) {
-     		if(message.member.roles.some(role => role.name === 'Mod')) {
-     			message.member.removeRole(message.guild.roles.find(c => c.name == "Mod"))
-     			message.reply("Your MOD role was removed.");
-     			
-     		}
-     	}
-     	
-     }
-     });
-
-
-
-
-
 
 
 
