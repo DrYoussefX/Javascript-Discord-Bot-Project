@@ -24,7 +24,7 @@ client.channels.get('572137978365739010').send(` ${message.author} has submitted
 client.on('message', message => {
 var msgArray = message.content.split(" ");
 var args = msgArray.slice(1);
-var warnUser = message.guild.member(message.mentions.users.first());
+var warnUser = message.mentions.members.first();
 var warnReason = args.join(" ").slice(22);
 const embedsi = new Discord.RichEmbed()
 .setColor('#32CD32')
@@ -98,7 +98,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setAuthor('Twoon BOT')
  .setTitle('Help list')
  .addField('Commands')
- .setDescription('Use -ping to check your ping!')
+ .addDescription('Use -ping to check your ping!')
  .setTimestamp()
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
  var embedth = new Discord.RichEmbed()
