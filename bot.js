@@ -158,7 +158,15 @@ client.on('message', message => {
     
        message.delete(100)
                         
-       message.reply("No swearing allowed, Swear deleted :slight_smile:")
+       message.reply("No swearing allowed, Swear deleted :slight_smile:, you were given the first warning.")
+       } else {
+       	     if (message.member.roles.some(role => role.name === 'warnx1')) {
+     	message.member.addRole(message.guild.roles.find(c => c.name == "warnx2")); 
+     	
+     	message.delete(100)
+                        
+       message.reply("No swearing allowed, Swear deleted :slight_smile:, you were given the second warning.")
+       }
        }
    
     }
