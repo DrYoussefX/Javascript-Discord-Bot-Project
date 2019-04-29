@@ -75,8 +75,9 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setColor('#0099ff')	
  .setAuthor('Twoon BOT')
  .setTitle('Help list')
- .addField('Commands')
- .setDescription('Use -ping to check your ping!')
+ .setDescription('This is a help list with all the commands you can use, Enjoy!')
+ .addField('Commands', 'Use -ping to check your ping\nUse -say to make the BOT say what you want!\nUse -echoembed to make an embeded message\nUse -clear to delete 10 messages\nUse -clearall to clear all the messages\nUse -suggest to suggest an idea to the staff members!\nUse -warn to warn someone\nUse -verify to get verified!\nUse -info to get information about the BOT\nAnd finally use -help to get this message!')
+ 
  .setTimestamp()
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
  var embedth = new Discord.RichEmbed()
