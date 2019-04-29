@@ -153,8 +153,8 @@ client.on('message', message => {
 client.on('message', message => {
   
      if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
-     if (message.member.roles.some(role => role.name !== 'Warn x1')) {
-     	message.member.addRole(message.guild.roles.find(c => c.name == "Warn x1"));
+     if (message.member.roles.some(role => role.name !== 'warnx1')) {
+     	message.member.addRole(message.guild.roles.find(c => c.name == "warnx1"));
     
        message.delete(100)
                         
