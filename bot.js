@@ -175,7 +175,7 @@ client.on("message", message=> {
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.9.5', 'Server moderation with multiple features')
+ .addField('Version 0.9.6', 'Server moderation with multiple features')
  .addField('Servers', client.guilds.size)
  .addField('BOT Users', client.users.size)
  .addField ('Owners','Awebdo#9161\nJesse#8454')
