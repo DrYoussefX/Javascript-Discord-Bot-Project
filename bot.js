@@ -58,8 +58,8 @@ client.on('message', message => {
 	.setTimestamp()
 	.setFooter('Twoon bot programmed by Jesse & Awebdo')
  if (message.content.startsWith(prefix + "features")) {
-message.delete(100)
-message.reply(embedrt)
+message.delete(1000)
+message.sendEmbed(embedrt);
 }
 });
 	
