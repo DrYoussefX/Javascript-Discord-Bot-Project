@@ -247,7 +247,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === ("EasterEgg1")) {
     message.reply(":thinking:")
-    message.author.sendMessage("Hey! dont tell anyone but you im actually made from 2 BOTS :wink:")
+    message.author.sendMessage("Hey! dont tell anyone but im actually made from 2 BOTS :wink:")
     message.delete(100)
     }
 });
