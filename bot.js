@@ -176,7 +176,7 @@ client.on("message", message=> {
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
  .addField('Version 0.9.5', 'Server moderation with multiple features')
- .addField('Wanna take a look on server commands? Use -help command. :wink:', 'Use -rules to get the server rules :wink:')
+ .addField('Servers', client.guilds.size)
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.id === '572057152559120394') {
 		    var emojiang = '569627380084375573';
