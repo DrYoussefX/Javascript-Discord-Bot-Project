@@ -44,13 +44,14 @@ client.channels.get('572137978365739010').send(` ${message.author} has submitted
    				});		
 
 });
+
 client.on('message', message => {
-let messageArray = message.content.split(" ");
-let args = messageArray.slice(1).join(" ");
+let messageArray2 = message.content.split(" ");
+let args2 = messageArray2.slice(1).join(" ");
 if (message.content.startsWith(prefix + "report")) {
-message.delete(1000)
+message.delete(100)
 message.reply("report was successfully sent :white_check_mark:");
-client.channels.get('572137978365739010').send(` ${message.author} has submitted a report. \nReport is : **${args}** `);
+client.channels.get('572825291177590814').send(` ${message.author} has submitted a report. \nReport is : **${args2}** `);
 }
 });
 
