@@ -48,7 +48,7 @@ let messageArray2 = message.content.split(" ");
 let args2 = messageArray2.slice(1).join(" ");
 if (message.content.startsWith(prefix + "report")) {
 message.delete(100)
-message.reply("report was successfully sent :white_check_mark:");
+message.reply("Report was successfully sent :white_check_mark:");
 client.channels.get('572825291177590814').send(` ${message.author} has submitted a report. \nReport is : **${args2}** `);
 }
 });
@@ -87,7 +87,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setTitle('Help list')
  .setDescription('This is a help list with all the commands you can use, Enjoy!')
- .addField('Commands', 'Use -ping to check your ping\nUse -say to make the BOT say what you want!\nUse -echoembed to make an embeded message\nUse -clear to delete 10 messages\nUse -clearall to clear all the messages\nUse -suggest to suggest an idea to the staff members!\nUse -warn to warn someone\nUse -verify to get verified!\nUse -info to get information about the BOT\nAnd finally use -help to get this message!')
+ .addField('Commands', 'Use -ping to check your ping\nUse -say to make the BOT say what you want!\nUse -echoembed to make an embeded message\nUse -clear to delete 10 messages\nUse -clearall to clear all the messages\nUse -suggest to suggest an idea to the staff members!\nUse -warn to warn someone\nUse -verify to get verified!\nUse -report to report a bug or even report an user\nUse -info to get information about the BOT\nAnd finally use -help to get this message!')
  
  .setTimestamp()
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
@@ -171,7 +171,7 @@ client.on("message", message=> {
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
  .addField('Version 0.9.5', 'Server moderation with multiple features')
- .addField('Wanna take a look on server commands? Use -help command. :wink:', 'Use -rules to get the server rules DMed :wink:')
+ .addField('Wanna take a look on server commands? Use -help command. :wink:', 'Use -rules to get the server rules :wink:')
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.id === '572057152559120394') {
 		    var emojiang = '569627380084375573';
