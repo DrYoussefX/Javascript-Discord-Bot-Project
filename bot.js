@@ -43,6 +43,18 @@ client.channels.get('572137978365739010').send(` ${message.author} has submitted
 
    				});		
 
+});
+client.on('message', message => {
+let messageArray = message.content.split(" ");
+let args = messageArray.slice(1).join(" ");
+if (message.content.startsWith(prefix + "report")) {
+message.delete(1000)
+message.reply("report was successfully sent :white_check_mark:");
+client.channels.get('572137978365739010').send(` ${message.author} has submitted a report. \nReport is : **${args}** `);
+}
+});
+
+
     client.on("message", message => {
 	      if (message.content.startsWith(prefix + "verify")) {
 		      if (message.channel.id !== '571292840227897365') return;
@@ -159,7 +171,7 @@ client.on("message", message=> {
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.9.1', 'Server moderation with multiple features')
+ .addField('Version 0.9.5', 'Server moderation with multiple features')
  .addField('Wanna take a look on server commands? Use -help command. :wink:', 'Use -rules to get the server rules DMed :wink:')
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.id === '572057152559120394') {
