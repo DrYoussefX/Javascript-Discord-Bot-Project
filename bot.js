@@ -61,6 +61,7 @@ client.on('message', message => {
 message.delete(100)
 message.reply(embedrt)
 }
+}
 });
 	
 client.on('message', message => {
