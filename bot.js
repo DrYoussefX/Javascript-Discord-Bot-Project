@@ -159,7 +159,7 @@ client.on("message", message=> {
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.9', 'Server moderation with multiple features')
+ .addField('Version 0.9.1', 'Server moderation with multiple features')
  .addField('Wanna take a look on server commands? Use -help command. :wink:', 'Use -rules to get the server rules DMed :wink:')
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.id === '572057152559120394') {
@@ -244,6 +244,13 @@ client.on('message', message => {
    }
 });
 
+client.on('message', message => {
+    if (message.content === ("EasterEgg1")) {
+    message.reply(":thinking:")
+    message.author.sendMessage("Hey! dont tell anyone but you im actually made from 2 BOTS :wink:")
+    message.delete(100)
+    }
+});
 
 // THIS  MUST  BE  THIS  WAY
 
