@@ -49,6 +49,21 @@ client.channels.get('572137978365739010').send(` ${message.author} has submitted
    });		
 
 client.on('message', message => {
+	var embedrt = new Discord.RichEmbed()
+	.setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
+	.setTitle('BOT Features')
+	.setColor('#FF0000')
+	.addField('Features', 'Ping check\nSay command\nWarn command\nSwear detector with auto warn and kick\nSuggest command\nReport command\nEcho with embed\nHelp command\nServer rules command\nInformation command\nAnd maybe even some easter eggs :wink:')
+	.setDescription('These are the multiple features that the BOT can do, to know how to use them just type -help :slight_smile:')
+	.setTimestamp()
+	.setFooter('Twoon bot programmed by Jesse & Awebdo')
+ if (message.content.startsWith(prefix + "features")) {
+message.delete(100)
+message.reply(embedrt)
+}
+});
+	
+client.on('message', message => {
 let messageArray2 = message.content.split(" ");
 let args2 = messageArray2.slice(1).join(" ");
 if (message.content.startsWith(prefix + "report")) {
@@ -175,10 +190,10 @@ client.on("message", message=> {
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.9.7', 'Server moderation with multiple features')
+ .addField('Version 0.9.6', 'Server moderation with multiple features')
  .addField('Servers', client.guilds.size)
  .addField('BOT Users', client.users.size)
- .addField ('Owners','Awebdo#9161 [Facebook](https://www.facebook.com/profile.php?id=100007133072446)\n Jesse#8454 [Facebook](https://www.facebook.com/html541564)')
+ .addField ('Owners','Awebdo#9161\nJesse#8454')
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.id === '572057152559120394') {
 		    var emojiang = '569627380084375573';
