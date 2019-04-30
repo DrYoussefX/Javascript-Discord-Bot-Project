@@ -8,7 +8,8 @@ const prefix = "-";
 
 client.on('ready', () => {
 
-    console.log('I am ready!');
+    console.log('I am ready!')
+client.user.setGame('testing set presence')
 
 });
 client.on('message', message => {
