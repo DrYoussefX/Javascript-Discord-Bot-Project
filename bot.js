@@ -9,7 +9,9 @@ const prefix = "-";
 client.on('ready', () => {
 
     console.log('I am ready!')
-client.user.setPresence('testing set presence');
+client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
+ .then(console.log)
+ .catch(console.error);
 
 });
 client.on('message', message => {
