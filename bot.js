@@ -41,9 +41,7 @@ client.channels.get('572137978365739010').send(` ${message.author} has submitted
  
    				}			
 
-   				});		
-
-});
+   });		
 
 client.on('message', message => {
 let messageArray2 = message.content.split(" ");
