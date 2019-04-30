@@ -193,7 +193,7 @@ client.on("message", message=> {
  .addField('Version 0.9.8', 'Server moderation with multiple features')
  .addField('Servers', client.guilds.size)
  .addField('BOT Users', client.users.size)
- .addField ('Owners','Awebdo#9161 [Facebook account](https://www.facebook.com/profile.php?id=100007133072446)\nJesse#8454[Facebook account](https://www.facebook.com/html541564)')
+ .addField ('Owners','Awebdo#9161  [Facebook account](https://www.facebook.com/profile.php?id=100007133072446)\nJesse#8454  [Facebook account](https://www.facebook.com/html541564)')
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.id === '572057152559120394') {
 		    var emojiang = '569627380084375573';
