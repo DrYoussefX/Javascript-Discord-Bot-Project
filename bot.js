@@ -23,7 +23,7 @@ client.channels.get('572137978365739010').send(` ${message.author} has submitted
 
  client.on("message", message => {
    var embedfoo = new Discord.RichEmbed()
-   .setAuthor('Twoon BOT', 'https://steembottracker.com/img/bot_logo.png')		
+   .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')		
    .setTitle('Echo!')		
    .setColor('#0099ff')		
    .setDescription(message.content.replace('-echoembed', ''))		
@@ -98,7 +98,37 @@ message.channel.send(`${message.author.username} was successfully verified :whit
 	       }
 	 }
  });
+
+  client.on("message", message=> {
+ var embedsh = new Discord.RichEmbed()
+ .setColor('#0099ff')	
+ .setAuthor('Twoon BOT')
+ .setTitle('Server rules')
+ .setDescription('This is a rules list with all of the server rules, Enjoy!')
+ .addField('Rules', '1-Dont swear, swearing might get you kicked!\n2-Use the channel commands to know the commands or information on the BOT.\n3-Dont ruin the server or the staff will ban you.\n4-Dont suggest useless ideas or ideas that already exist.\n5-Dont mention the BOT or the staff for useless reasons or for no reason at all.\n6-Try not to exploit bugs instead tell the staff so they can fix it!\n7-Dont forget to have fun!')
+ .setTimestamp()
+ .setFooter('Twoon BOT programmed by Jesse & Awebdo')
+ var embedtr = new Discord.RichEmbed()
+ .setColor('#32CD32')
+ .setAuthor('Twoon BOT')
+ .setTitle('Rules command')
+ .addField('Server rules were sent using a private message :white_check_mark:', 'Wanna take a look on the commands? Use -help command :wink:')
+ .setTimestamp()
+ .setFooter('Twoon BOT programmed by Jesse & Awebdo')
+ if (message.content.startsWith(prefix + "rules")) {
+	 if (message.channel.id === '572057152559120394') {
+  message.react('✅');
+  message.author.sendEmbed(embedsh);
+  message.channel.sendEmbed(embedtr);
  
+       } else {
+	       message.channel.send("No, use <#572057152559120394> instead <:angrycowboy:569627380084375573>");
+	       }
+	 }
+ });
+ 
+
+
 client.on("message", message=> {
     if (message.content.startsWith(prefix + "clear")) {
 if (message.member.roles.some(role => role.name === 'Mod')) {
@@ -126,10 +156,10 @@ message.reply("you do not have permissions to use this command")
 client.on("message", message=> {
  var embedfi = new Discord.RichEmbed()
  .setColor('#FF0000')
- .setAuthor('Twoon BOT', 'https://steembottracker.com/img/bot_logo.png')
+ .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.8', 'Server moderation with multiple features')
+ .addField('Version 0.9', 'Server moderation with multiple features')
  .addField('Wanna take a look on server commands? Use -help command. :wink:', 'Use -rules to get the server rules DMed :wink:')
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.id === '572057152559120394') {
