@@ -13,7 +13,7 @@ client.on('ready', () => {
 });
 client.on('message', message => {
 if(message.content.startsWith(prefix + "servers")) {
-message.reply(`Serving ${client.guilds} servers.`);
+message.reply(`Serving ${client.guilds.size} servers.`);
 }
 });
 client.on('message', message => {
