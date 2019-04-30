@@ -12,6 +12,11 @@ client.on('ready', () => {
 
 });
 client.on('message', message => {
+if(message.content.startsWith(prefix + "servers")) {
+message.reply(`Serving ${client.guilds} servers.`);
+}
+});
+client.on('message', message => {
 let messageArray = message.content.split(" ");
 let args = messageArray.slice(1).join(" ");
 if (message.content.startsWith(prefix + "suggest")) {
