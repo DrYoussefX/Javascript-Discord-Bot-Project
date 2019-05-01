@@ -34,7 +34,7 @@ client.channels.find(channel => channel.name === 'sent-suggestions').send(` ${me
    .setTimestamp()		
    .setFooter('Twoon bot programmed by Jesse & Awebdo')
   if (message.content.startsWith("-echoembed")) {		
-   if (message.member.roles.some(role => role.name === 'Dev')) {
+   if (message.member.hasPermissions("MANAGE_MESSAGES")) {
    message.delete(1000)		
   message.channel.send({embed: embedfoo});		
 
@@ -166,7 +166,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
 
 client.on("message", message=> {
     if (message.content.startsWith(prefix + "clear")) {
-if (message.member.roles.some(role => role.name === 'Mod')) {
+if (message.member.hasPermissions("MANAGE_MESSAGES")) {
      message.channel.bulkDelete(10);
 message.channel.send(" 10 messages successfully deleted :white_check_mark:");
 message.channel.bulkDelete(1);
@@ -221,7 +221,7 @@ client.on('message', message => {
      if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
      	 if (message.member.roles.some(role => role.name === 'warnx1')) return;
 	     if (message.author.bot) return;
-	     if (message.member.roles.some(role => role.name === 'Admin')) return;
+	     if (message.member.hasPermissions("MANAGE_MESSAGES")) return;
      	
      if (message.member.roles.some(role => role.name !== 'warnx1')) {
      	message.member.addRole(message.guild.roles.find(c => c.name == "warnx1"));
