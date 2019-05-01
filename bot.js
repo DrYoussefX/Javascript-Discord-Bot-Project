@@ -194,7 +194,7 @@ client.on("message", message=> {
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.9.9', 'Server moderation with multiple features')
+ .addField('Version 1.0.0', 'Server moderation with multiple features')
  .addField('Servers', client.guilds.size)
  .addField('BOT Users', client.users.size)
  .addField ('Owners','Awebdo#9161  [Facebook account](https://www.facebook.com/profile.php?id=100007133072446)\nJesse#8454  [Facebook account](https://www.facebook.com/html541564)')
@@ -334,7 +334,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === ("Monopoly")) {
 	    message.reply(":thinking:")
-	    message.author.send("Easter Egg 7/10\nI forgot my version can you please tell me the MAIN version?)
+	    message.author.send("Easter Egg 7/10\nI forgot my version can you please tell me the MAIN version?")
 	    message.delete(100)
     }
 });
