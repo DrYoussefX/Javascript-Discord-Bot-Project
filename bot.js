@@ -70,9 +70,9 @@ if (message.content.startsWith(prefix + "report")) {
 if (message.channel.name === 'reports') {
 message.delete(100)
 message.reply("Report was successfully sent :white_check_mark:");
-client.channels.find(channel => channel.name === 'reports').send(` ${message.author} has submitted a report. \nReport is : **${args2}** `);
+client.channels.find(channel => channel.name === 'sent-reports').send(` ${message.author} has submitted a report. \nReport is : **${args2}** `);
 } else {
-message.channel.send("No, use #reports instead.")
+message.channel.send("No, use #sent-reports instead.")
 }
 }
 });
@@ -178,7 +178,7 @@ message.reply("you do not have permissions to use this command")
 
 client.on("message", message=> {
     if (message.content.startsWith(prefix + "clearall")) {
-if (message.author.hasPermission(MANAGE_MESSAGES)) {
+if (message.author.hasPermission('MANAGE_MESSAGES')) {
      message.channel.bulkDelete(100);
 message.channel.send(" all messages successfully deleted :white_check_mark:");
 message.channel.bulkDelete(1);
