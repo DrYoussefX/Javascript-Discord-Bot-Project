@@ -319,7 +319,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content.includes("Mena")) {
+    if (message.content.includes("Mena") || message.content.includes("mena")) {
 	    message.reply(":thinking:")
 	    message.author.send("end of the easter egg for now....")
 	    message.delete(100)
