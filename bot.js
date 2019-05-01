@@ -16,10 +16,8 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
 });
 client.on('message', message => {
 	 if (message.content.startsWith(prefix + "restart")) {
-		 message.channel.send("Restarting bot...");
-		 process.exit();
-		 message.channel.send("Restarted.");
-		 }
+		 process.exit(1);
+}
 });
 client.on('message', message => {
 let messageArray = message.content.split(" ");
