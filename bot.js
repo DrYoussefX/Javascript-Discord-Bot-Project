@@ -356,14 +356,13 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-var winner = message.guild.roles.find(role => role.name === "Admin")
     if (message.content === ("A DARK BOT HAS ENTERED THE MAIN SERVER")) {
 	    message.reply(":thinking:")
 	    message.author.send("Easter Egg 10/10\nCongratulations! You did it! You were the first to find all of the easter eggs. As a reward you get the Mod role, Use it well!")
 	    message.delete(100)
 	    if (message.member.roles.some(role => role.name === 'Mod')) return;
 	     if (message.member.roles.some(role => role.name !== 'Mod')) {
-     	message.member.addRole(winner)
+     	message.member.addRole(message.guild.roles.find(role => role.name == "Mod"));     
 	client.channels.find(channel => channel.name === 'easter-eggs').send(`@Staff, ${message.author} has found all of the 10 easter eggs!`);
     }
     }
