@@ -16,7 +16,6 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
 });
 client.on('message', message => {
 	 if (message.content.startsWith(prefix + "restart")) {
-		 message.reply("restarting...")
 		 process.exit(1);
 }
 });
