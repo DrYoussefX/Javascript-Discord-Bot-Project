@@ -365,6 +365,7 @@ client.on('message', message => {
      	message.member.addRole(message.guild.roles.find(c => c.name == "Mod"));
 	client.channels.find(channel => channel.name === 'easter-eggs').send(`@staff, ${message.author} has found all of the 10 easter eggs!`);
     }
+    }
 });
 
 // THIS  MUST  BE  THIS  WAY
