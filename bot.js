@@ -68,10 +68,13 @@ client.on('message', message => {
 let messageArray2 = message.content.split(" ");
 let args2 = messageArray2.slice(1).join(" ");
 if (message.content.startsWith(prefix + "report")) {
-if (message.channel.name !== 'reports');
+if (message.channel.name === 'reports') {
 message.delete(100)
 message.reply("Report was successfully sent :white_check_mark:");
 client.channels.find(channel => channel.name === 'reports').send(` ${message.author} has submitted a report. \nReport is : **${args2}** `);
+} else {
+message.channel.send("No, use #commands instead.")
+}
 }
 });
 
