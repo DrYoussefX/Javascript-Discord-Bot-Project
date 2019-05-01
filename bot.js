@@ -73,7 +73,7 @@ message.delete(100)
 message.reply("Report was successfully sent :white_check_mark:");
 client.channels.find(channel => channel.name === 'reports').send(` ${message.author} has submitted a report. \nReport is : **${args2}** `);
 } else {
-message.channel.send("No, use #commands instead.")
+message.channel.send("No, use #reports instead.")
 }
 }
 });
