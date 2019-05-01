@@ -119,7 +119,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
  const helpchannel = message.guild.channels.find("name", "commands");
  if (message.content.startsWith(prefix + "help")) {
-	 if (helpchannel) {
+	 if (message.channel.name === helpchannel) {
   message.react('✅');
   message.author.sendEmbed(embedfh);
   message.channel.sendEmbed(embedth);
