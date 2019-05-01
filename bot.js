@@ -150,7 +150,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setTimestamp()
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
  if (message.content.startsWith(prefix + "rules")) {
-	 if (message.channel.name !== 'commands') {
+	 if (message.channel.name === 'commands') {
   message.react('✅');
   message.author.sendEmbed(embedsh);
   message.channel.sendEmbed(embedtr);
