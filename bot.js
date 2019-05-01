@@ -120,7 +120,6 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .addField('Help list sent using a private message :white_check_mark:', 'Wanna take a look on the rules? Use -rules command :wink:')
  .setTimestamp()
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
- var helpchannel = message.guild.channels.find(channel => channel.name === "commands")
  if (message.content.startsWith(prefix + "help")) {
 	 if (message.channel.name === "commands") {
   message.react('✅');
