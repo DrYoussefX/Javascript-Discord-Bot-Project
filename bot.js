@@ -321,7 +321,23 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.includes("Mena") || message.content.includes("mena")) {
 	    message.reply(":thinking:")
-	    message.author.send("end of the easter egg for now....")
+	    message.author.send("Easter Egg 6/10\nwhat was THE name of the board game that you play with money and dice? I forgot..")
+	    message.delete(100)
+    }
+});
+
+client.on('message', message => {
+    if (message.content === ("Monoploy")) {
+	    message.reply(":thinking:")
+	    message.author.send("Easter Egg 7/10\nWhats the 4th rule in the SERVER rules?")
+	    message.delete(100)
+    }
+});
+
+client.on('message', message => {
+    if (message.content.includes("Dont suggest useless ideas or ideas that already exist")) {
+	    message.reply(":thinking:")
+	    message.author.send("Easter Egg 8/10\nWhat?")
 	    message.delete(100)
     }
 });
