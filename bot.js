@@ -14,27 +14,7 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
  .catch(console.error);
 
 });
-client.on('message', message => {
-var msgArray = message.content.split(" ");
-var args = msgArray.slice(1);
-var warnUser = message.guild.member(message.mentions.users.first());
-var warnReason = args.join(" ").slice(22);
-const embedsi = new Discord.RichEmbed()
-.setColor('#32CD32')
- .setAuthor('Neo BOT')
- .setTitle('Recent warn')
- .addField(`${warnUser} has been warned by ${message.author.username}`, `Reason : "${warnReason}"`)
- .setTimestamp()
- .setFooter('Neo programmed by Jesse')
-if (message.content.startsWith(prefix + "warn")) {
-	if (message.member.roles.some(role => role.name === 'Mod')) {
-message.channel.send(`${warnUser} was successfully warned :white_check_mark:`);
-client.channels.get('572129682552520704').send(`__**Recent Warnings**__ : \nMember ${warnUser} was warned by Moderator **${message.author.username}** for **"${warnReason} "**`);
-} else { 
-message.reply("No! you are not a mod <:angrycowboy:569627380084375573>");
-}
-}
-});
+
 client.on('message', message => {
 let messageArray = message.content.split(" ");
 let args = messageArray.slice(1).join(" ");
