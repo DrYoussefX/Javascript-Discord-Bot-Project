@@ -281,7 +281,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === ("EasterEgg1")) {
     message.reply(":thinking:")
-    message.author.sendMessage("Easter egg 1\nI reAlly like battle royale especialy the battle grounds one, Do you like any of them?")
+    message.author.sendMessage("Easter Egg 1/10\nto let you know whats this is,This is an easter egg if you are the 1st collect themall you might get a surprise!\nI reAlly like battle royale especialy the battle grounds one, Do you like any of them?")
     message.delete(100)
     }
 });
@@ -289,7 +289,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === ("Pubg")) {	
     message.reply(":thinking:")	
-    message.author.send("Easter Egg 2\nSomeone in this server is a bit DARK, Maybe try saying his name?")
+    message.author.send("Easter Egg 2/10\nSomeone in this server is a bit DARK, Maybe try saying his name?")
     message.delete(100)
     }
 });
@@ -297,11 +297,35 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === ("Jesse")) {
 	    message.reply(":thinking:")
-	    message.author.send("Taster egg 3\n This BOT can't make mistakes, And for sure can't make spelling ones")
+	    message.author.send("Easter Egg 3/10\nTaster egg 3\n This BOT can't make mistakes, And for sure can't make spelling ones")
 	    message.delete(100)
     }
 });
-	    
+
+client.on('message', message => {
+    if (message.content === ("Taster")) {
+	    message.reply(":thinking:")
+	    message.author.send("Easter Egg 4/10\nI don't really like the server owner i think he HAS problems...")
+	    message.delete(100)
+    }
+});
+
+client.on('message', message => {
+    if (message.content === ("Awebdo")) {
+	    message.reply(":thinking:")
+	    message.author.send("Easter Egg 5/10\nI wish to have ENTERED the pubg discord server, what was the arabian one called?")
+	    message.delete(100)
+    }
+});
+
+client.on('message', message => {
+    if (message.content.includes("Mena")) {
+	    message.reply(":thinking:")
+	    message.author.send("end of the easter egg for now....")
+	    message.delete(100)
+    }
+});
+
 // THIS  MUST  BE  THIS  WAY
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
