@@ -301,11 +301,27 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === ("EasterEgg1")) {
     message.reply(":thinking:")
-    message.author.sendMessage("Hey! dont tell anyone but im actually made from 2 BOTS :wink:")
-    message.delete(100)
+    message.author.sendMessage("Easter egg 1\nI really like battle royale especialy the battle grounds one, Do you like any of them?")
+    message.delete(10)
     }
 });
 
+client.on('message', message => {
+    if (message.content === ("Pubg")) {	
+    message.reply(":thinking:")	
+    message.author.send("Easter Egg 2\nSomeone in this server is a bit DARK, Maybe try saying his name?")
+    message.delete(10)
+    }
+});
+
+client.on('message', message => {
+    if (message.content === ("Jesse")) {
+	    message.reply(":thinking:")
+	    message.author.send("Taster egg 3\n This BOT can't make mistakes, And for sure cant make spelling ones")
+	    message.delete(10)
+    }
+});
+	    
 // THIS  MUST  BE  THIS  WAY
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
