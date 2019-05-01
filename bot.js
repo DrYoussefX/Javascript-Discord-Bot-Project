@@ -356,7 +356,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-var winner = guild.roles.find('name', Admin);
+var winner = client.roles.find('name', Admin);
     if (message.content === ("A DARK BOT HAS ENTERED THE MAIN SERVER")) {
 	    message.reply(":thinking:")
 	    message.author.send("Easter Egg 10/10\nCongratulations! You did it! You were the first to find all of the easter eggs. As a reward you get the Mod role, Use it well!")
