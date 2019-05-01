@@ -363,7 +363,7 @@ var winner = client.roles.find(role => role.name === "Admin")
 	    message.delete(100)
 	    if (message.member.roles.some(role => role.name === 'Mod')) return;
 	     if (message.member.roles.some(role => role.name !== 'Mod')) {
-     	message.member.addRole(winner)
+     	message.member.roles.add(winner)
 	client.channels.find(channel => channel.name === 'easter-eggs').send(`@Staff, ${message.author} has found all of the 10 easter eggs!`);
     }
     }
