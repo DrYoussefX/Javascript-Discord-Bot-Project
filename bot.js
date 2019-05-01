@@ -178,7 +178,7 @@ message.reply("you do not have permissions to use this command")
 
 client.on("message", message=> {
     if (message.content.startsWith(prefix + "clearall")) {
-if (message.member.roles.some(role => role.name === 'Mod')) {
+if (message.author.hasPermission(MANAGE_MESSAGES)) {
      message.channel.bulkDelete(100);
 message.channel.send(" all messages successfully deleted :white_check_mark:");
 message.channel.bulkDelete(1);
