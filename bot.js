@@ -117,8 +117,9 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .addField('Help list sent using a private message :white_check_mark:', 'Wanna take a look on the rules? Use -rules command :wink:')
  .setTimestamp()
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
+ const helpchannel = message.guild.channels.find("name", "commands");
  if (message.content.startsWith(prefix + "help")) {
-	 if (message.channel.id === '572057152559120394') {
+	 if (helpchannel) {
   message.react('✅');
   message.author.sendEmbed(embedfh);
   message.channel.sendEmbed(embedth);
