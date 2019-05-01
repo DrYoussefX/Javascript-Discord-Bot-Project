@@ -302,7 +302,7 @@ client.on('message', message => {
     if (message.content === ("EasterEgg1")) {
     message.reply(":thinking:")
     message.author.sendMessage("Easter egg 1\nI reAlly like battle royale especialy the battle grounds one, Do you like any of them?")
-    message.delete(10)
+    message.delete(100)
     }
 });
 
@@ -310,7 +310,7 @@ client.on('message', message => {
     if (message.content === ("Pubg")) {	
     message.reply(":thinking:")	
     message.author.send("Easter Egg 2\nSomeone in this server is a bit DARK, Maybe try saying his name?")
-    message.delete(10)
+    message.delete(100)
     }
 });
 
@@ -318,7 +318,7 @@ client.on('message', message => {
     if (message.content === ("Jesse")) {
 	    message.reply(":thinking:")
 	    message.author.send("Taster egg 3\n This BOT can't make mistakes, And for sure can't make spelling ones")
-	    message.delete(10)
+	    message.delete(100)
     }
 });
 	    
