@@ -15,11 +15,6 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
 
 });
 client.on('message', message => {
-	 if (message.content.startsWith(prefix + "restart")) {
-		 process.exit(1);
-}
-});
-client.on('message', message => {
 let messageArray = message.content.split(" ");
 let args = messageArray.slice(1).join(" ");
 if (message.content.startsWith(prefix + "suggest")) {
@@ -57,7 +52,7 @@ client.on('message', message => {
 	.setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
 	.setTitle('BOT Features')
 	.setColor('#FF0000')
-	.addField('Features', 'Ping check\nSay command\nWarn command\nSwear detector with auto warn and kick\nSuggest command\nReport command\nEcho with embed\nHelp command\nServer rules command\nInformation command\nAnd maybe even soMe eASTER EGGs :wink:')
+	.addField('Features', 'Ping check\nSay command\nWarn command\nSwear detector with auto warn and kick\nSuggest command\nReport command\nEcho with embed\nHelp command\nServer rules command\nInformation command\nAnd maybe even some easter eggs :wink:')
 	.setDescription('These are the multiple features that the BOT can do, to know how to use them just type -help :slight_smile:')
 	.setTimestamp()
 	.setFooter('Twoon bot programmed by Jesse & Awebdo')
@@ -183,7 +178,7 @@ message.reply("you do not have permissions to use this command")
 
 client.on("message", message=> {
     if (message.content.startsWith(prefix + "clearall")) {
-if (message.member.hasPermission('MANAGE_MESSAGES')) {
+if (message.member.roles.some(role => role.name === 'Mod')) {
      message.channel.bulkDelete(100);
 message.channel.send(" all messages successfully deleted :white_check_mark:");
 message.channel.bulkDelete(1);
@@ -199,7 +194,7 @@ client.on("message", message=> {
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.9.9', 'Server moderation with multiple features')
+ .addField('Version 0.9.8', 'Server moderation with multiple features')
  .addField('Servers', client.guilds.size)
  .addField('BOT Users', client.users.size)
  .addField ('Owners','Awebdo#9161  [Facebook account](https://www.facebook.com/profile.php?id=100007133072446)\nJesse#8454  [Facebook account](https://www.facebook.com/html541564)')
@@ -289,7 +284,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content === ("MASTER EGG") || message.content === ("Master egg") || message.content === ("master egg") || message.content === ("Master Egg")) {
+    if (message.content === ("EasterEgg1")) {
     message.reply(":thinking:")
     message.author.sendMessage("Easter Egg 1/10\nto let you know whats this is,This is an easter egg if you are the 1st collect themall you might get a surprise!\nI reAlly like battle royale especialy the battle grounds one, Do you like any of them?")
     message.delete(100)
