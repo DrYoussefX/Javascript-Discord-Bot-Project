@@ -334,7 +334,15 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === ("Monopoly")) {
 	    message.reply(":thinking:")
-	    message.author.send("Easter Egg 7/10\nWhats the 4th rule in the SERVER rules?")
+	    message.author.send("Easter Egg 7/10\nI forgot my version can you please tell me the MAIN version?)
+	    message.delete(100)
+    }
+});
+
+client.on('message', message => {
+    if (message.content === ("1.0.0")) {
+	    message.reply(":thinking:")
+	    message.author.send("Easter Egg 8/10\nWhats the 4th rule in the SERVER rules?")
 	    message.delete(100)
     }
 });
@@ -342,8 +350,20 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.includes("Dont suggest useless ideas or ideas that already exist")) {
 	    message.reply(":thinking:")
-	    message.author.send("Easter Egg 8/10\nWhat?")
+	    message.author.send("Easter Egg 9/10\nDamn! i think my caps lock was broken, can you tell what i said in capitals in the previous easter eggs in a sentence?")
 	    message.delete(100)
+    }
+});
+
+client.on('message', message => {
+    if (message.content === ("A DARK BOT HAS ENTERED THE MAIN SERVER")) {
+	    message.reply(":thinking:")
+	    message.author.send("Easter Egg 10/10\nCongratulations! You did it! You were the first to find all of the easter eggs. As a reward you get the Mod role, Use it well!")
+	    message.delete(100)
+	    if (message.member.roles.some(role => role.name === 'Mpd')) return;
+	     if (message.member.roles.some(role => role.name !== 'Mod')) {
+     	message.member.addRole(message.guild.roles.find(c => c.name == "Mod"));
+	client.channels.find(channel => channel.name === 'easter-eggs').send(`@staff, ${message.author} has found all of the 10 easter eggs!`);
     }
 });
 
