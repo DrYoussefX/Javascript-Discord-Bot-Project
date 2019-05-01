@@ -19,6 +19,7 @@ client.on('message', message => {
 let messageArray = message.content.split(" ");
 let args = messageArray.slice(1).join(" ");
 if (message.content.startsWith(prefix + "suggest")) {
+if (message.channel.name !== 'send-suggestions') return;
 message.delete(1000)
 message.reply("suggestion was successfully sent :white_check_mark:");
 client.channels.find(channel => channel.name === 'sent-suggestions').send(` ${message.author} has submitted a sugestion. \nSuggestion is : **${args}** `);
