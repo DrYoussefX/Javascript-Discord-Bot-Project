@@ -52,7 +52,7 @@ client.on('message', message => {
 	.setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
 	.setTitle('BOT Features')
 	.setColor('#FF0000')
-	.addField('Features', 'Ping check\nSay command\nWarn command\nSwear detector with auto warn and kick\nSuggest command\nReport command\nEcho with embed\nHelp command\nServer rules command\nInformation command\nAnd maybe even some easter eggs :wink:')
+	.addField('Features', 'Ping check\nSay command\nWarn command\nSwear detector with auto warn and kick\nSuggest command\nReport command\nEcho with embed\nHelp command\nServer rules command\nInformation command\nAnd maybe even soMe eASTER EGGs :wink:')
 	.setDescription('These are the multiple features that the BOT can do, to know how to use them just type -help :slight_smile:')
 	.setTimestamp()
 	.setFooter('Twoon bot programmed by Jesse & Awebdo')
