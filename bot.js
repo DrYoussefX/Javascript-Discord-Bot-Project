@@ -165,7 +165,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
 
 
 client.on("message", message=> {
-    if (message.content.startsWith(prefix + "clear")) {
+    if (message.content === (prefix + "clear")) {
 if (message.member.hasPermissions("MANAGE_MESSAGES")) {
      message.channel.bulkDelete(10);
 message.channel.send(" 10 messages successfully deleted :white_check_mark:");
@@ -177,7 +177,7 @@ message.reply("you do not have permissions to use this command")
 });
 
 client.on("message", message=> {
-    if (message.content.startsWith(prefix + "clearall")) {
+    if (message.content === (prefix + "clearall")) {
 if (message.member.hasPermissions("MANAGE_MESSAGES")) {
      message.channel.bulkDelete(100);
 message.channel.send(" all messages successfully deleted :white_check_mark:");
@@ -194,7 +194,7 @@ client.on("message", message=> {
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Jesse & Awebdo')
  .setTimestamp()
- .addField('Version 0.9.8', 'Server moderation with multiple features')
+ .addField('Version 0.9.9', 'Server moderation with multiple features')
  .addField('Servers', client.guilds.size)
  .addField('BOT Users', client.users.size)
  .addField ('Owners','Awebdo#9161  [Facebook account](https://www.facebook.com/profile.php?id=100007133072446)\nJesse#8454  [Facebook account](https://www.facebook.com/html541564)')
@@ -284,9 +284,9 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content === ("EasterEgg1")) {
+    if (message.content === ("MASTER EGG") || message.content === ("Master egg") || message.content === ("Master Egg") || message.content === ("master egg")) {
     message.reply(":thinking:")
-    message.author.sendMessage("Easter Egg 1/10\nto let you know whats this is,This is an easter egg if you are the 1st collect themall you might get a surprise!\nI reAlly like battle royale especialy the battle grounds one, Do you like any of them?")
+    message.author.sendMessage("Easter Egg 1/10\nto let you know whats this is,This is an easter egg if you are the 1st collect themall you might get a surprise!\nI reAlly like battle royale games especialy the battle grounds one, Do you like any of them?")
     message.delete(100)
     }
 });
@@ -332,7 +332,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content === ("Monoploy")) {
+    if (message.content === ("Monopoly")) {
 	    message.reply(":thinking:")
 	    message.author.send("Easter Egg 7/10\nWhats the 4th rule in the SERVER rules?")
 	    message.delete(100)
