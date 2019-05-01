@@ -58,6 +58,7 @@ client.on('message', message => {
 	.setTimestamp()
 	.setFooter('Twoon bot programmed by Jesse & Awebdo')
  if (message.content.startsWith(prefix + "features")) {
+if (message.channel.name !== 'commands') return;
 message.delete(1000)
 message.channel.sendEmbed(embedrt);
 }
@@ -67,16 +68,17 @@ client.on('message', message => {
 let messageArray2 = message.content.split(" ");
 let args2 = messageArray2.slice(1).join(" ");
 if (message.content.startsWith(prefix + "report")) {
+if (message.channel.name !== 'reports');
 message.delete(100)
 message.reply("Report was successfully sent :white_check_mark:");
-client.channels.get('572825291177590814').send(` ${message.author} has submitted a report. \nReport is : **${args2}** `);
+client.channels.find(channel => channel.name === 'reports').send(` ${message.author} has submitted a report. \nReport is : **${args2}** `);
 }
 });
 
 
     client.on("message", message => {
 	      if (message.content.startsWith(prefix + "verify")) {
-		      if (message.channel.id !== '571292840227897365') return;
+		      if (message.channel.name !== 'verification') return;
 	      if (message.member.roles.some(role => role.name === 'Verified')) {
 		      message.channel.send("You're already verified.");
 	      } else {
@@ -148,7 +150,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setTimestamp()
  .setFooter('Twoon BOT programmed by Jesse & Awebdo')
  if (message.content.startsWith(prefix + "rules")) {
-	 if (message.channel.id === '572057152559120394') {
+	 if (message.channel.name !== 'commands') {
   message.react('✅');
   message.author.sendEmbed(embedsh);
   message.channel.sendEmbed(embedtr);
@@ -196,7 +198,7 @@ client.on("message", message=> {
  .addField('BOT Users', client.users.size)
  .addField ('Owners','Awebdo#9161  [Facebook account](https://www.facebook.com/profile.php?id=100007133072446)\nJesse#8454  [Facebook account](https://www.facebook.com/html541564)')
     if (message.content.startsWith(prefix + "info")) {
-	    if (message.channel.id === '572057152559120394') {
+	    if (message.channel.name === 'commands') {
 		    var emojiang = '569627380084375573';
      message.react('✅')
      message.channel.sendEmbed(embedfi);
