@@ -339,18 +339,17 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-	
-if (message.content.startsWith(prefix + "hug")) {
-	
+	if (message.channel.startsWith(prefix + "hug")) {
+		
 var huggedUser = message.mentions.members.first();
-if (huggedUser === message.author) {
-message.channel.send(`Hmm, you can't hug yourself, ${message.author}`);
-} else {
-message.channel.send(`${message.author} hugged ${huggedUser} warmly.`);
-}
-}
+		if (huggedUser === message.author) {
+			message.channel.send(`Hmm, you cant hug yourself, ${message.author}`);
+			
+		} else {
+			message.channel.send(`${message.author} hugged ${huggedUser} warmly! `);
+		}
+	}
 });
-
 client.on('message', message => {
     if (message.content === ("1.0.0")) {
 	    message.reply(":thinking:")
