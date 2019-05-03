@@ -338,6 +338,13 @@ client.on('message', message => {
 	    message.delete(100)
     }
 });
+client.on('message', message => {
+	
+var huggedUser = message.mentions.members.first();
+if (message.content.startsWith(prefix + "hug")) {
+	message.channel.send(`${message.author} hugged ${huggedUser} warmly!`)
+}
+});
 
 client.on('message', message => {
     if (message.content === ("1.0.0")) {
