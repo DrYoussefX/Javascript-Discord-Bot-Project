@@ -342,6 +342,7 @@ client.on('message', message => {
 	
 var huggedUser = message.mentions.members.first();
 if (message.content.startsWith(prefix + "hug")) {
+ message.delete(1000)
 	message.channel.send(`${message.author} hugged ${huggedUser} warmly!`)
 }
 });
