@@ -340,8 +340,9 @@ client.on('message', message => {
 });
 client.on('message', message => {
 	
-var huggedUser = message.mentions.members.first();
 if (message.content.startsWith(prefix + "hug")) {
+	
+var huggedUser = message.mentions.members.first();
 if (huggedUser === message.author) {
 message.channel.send(`Hmm, you can't hug yourself, ${message.author}`);
 } else {
