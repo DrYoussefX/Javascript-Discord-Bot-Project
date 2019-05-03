@@ -349,7 +349,7 @@ if (huggedUser === message.author) {
 message.channel.send(`How are you going to hug yourself, ${message.author}`);
 	
 }
-	
+}
 });
 
 client.on('message', message => {
