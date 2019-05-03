@@ -346,7 +346,7 @@ if (huggedUser === message.author) {
  message.delete(1000)
 	message.channel.send(`${message.author} hugged ${huggedUser} warmly!`)
 } else {
-message.channel.send(`How are you going to hug yourself, ${message.author}`);
+message.channel.send(`How are you going to hug yourself, ${message.author} ?`);
 	
 }
 }
