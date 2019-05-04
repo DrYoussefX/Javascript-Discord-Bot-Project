@@ -339,7 +339,7 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-	if (message.channel.startsWith(prefix + "hug")) {
+	if (message.content.startsWith(prefix + "hug")) {
 		
 var huggedUser = message.mentions.members.first();
 		if (huggedUser !== message.author) {
