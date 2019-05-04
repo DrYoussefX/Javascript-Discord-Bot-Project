@@ -372,7 +372,7 @@ client.on('message', message => {
     });
 
 client.on('message', message => { 
-	if message.content === ("minecraft hhh") {
+	if (message.content === ("minecraft hhh")) {
 	message.reply("zpy hhh")
 	}
 }
