@@ -370,7 +370,15 @@ client.on('message', message => {
     }
     }
 });
-
+client.on('message', message => {
+	if (message.content.startsWith(prefix + "hug")) {
+	var huggedUser = message.mentions.members.first();
+	if (huggedUser === message.author) return;
+	if (huggedUser !== message.author) {
+		message.channel.send(`${message.author} hugged ${huggedUser}`);
+		}
+		}
+		});
 // THIS  MUST  BE  THIS  WAY
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
