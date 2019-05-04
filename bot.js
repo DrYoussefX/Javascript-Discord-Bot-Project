@@ -340,15 +340,16 @@ client.on('message', message => {
 });
 client.on('message', message => {
 	if (message.channel.startsWith(prefix + "hug")) {
-	var huggedUser = message.mentions.members.first();
-		if (huggedUser === message.author) {
-			message.channel.send(`Hmm, you cant hug yourself, ${message.author}`);
-			
-		} else {
-			message.channel.send(`${message.author} hugged ${huggedUser} warmly! `);
+		
+var huggedUser = message.mentions.members.first();
+		if (huggedUser !== message.author) {
+			message.channel.send(`Failed to use this command on ${huggedUser}`);
+			} else {
+				message.delete(1000);
+				message.channel.send(`${message.author} hugged ${huggedUser}`);
+			}
 		}
-	}
-});
+		});
 client.on('message', message => {
     if (message.content === ("1.0.0")) {
 	    message.reply(":thinking:")
