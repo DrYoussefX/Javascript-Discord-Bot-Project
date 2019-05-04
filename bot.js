@@ -375,7 +375,7 @@ client.on('message', message => {
 	var huggedUser = message.mentions.members.first();
 	if (huggedUser === message.author) return;
 	if (huggedUser !== message.author) {
-		message.channel.send(`${message.author} hugged ${huggedUser}`);
+		message.channel.send(`${message.author} hugged ${huggedUser}!`);
 		}
 		}
 		});
