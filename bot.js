@@ -369,5 +369,5 @@ client.on('message', message => {
 	client.channels.find(channel => channel.name === 'easter-eggs').send(`@Staff, ${message.author} has found all of the 10 easter eggs!`);
     }
     }
-});
+};
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
