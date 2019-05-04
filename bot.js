@@ -375,8 +375,7 @@ client.on('message', message => {
 	if (message.content === ("minecraft hhh")) {
 	message.reply("zpy hhh")
 	}
-}
-	  });
+});
 	
 		
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
