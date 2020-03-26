@@ -19,3 +19,4 @@ if(message.content.includes("test") {
    message.reply("hi");
    }
 }
+client.login(process.env.BOT_TOKEN);
