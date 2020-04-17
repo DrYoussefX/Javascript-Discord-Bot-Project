@@ -15,12 +15,7 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
 });	
 
    
-        client.on('message', message=> {
-          if(message.content.includes('احا') || message.content.includes('شرموط') || message.content.includes('عرص') || message.content.includes('خول') || message.content.includes('زبي')){
-            message.delete(100);
-            message.reply('No swearing allowed!');
-          }
-        });
+
         client.on('message', message=> {
           if(message.author.id == "569962950241026069") return;
           if(message.content.includes("discord.gg")) {
