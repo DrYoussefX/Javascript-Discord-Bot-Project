@@ -1,8 +1,4 @@
 const Discord = require('discord.js');
-let snekfetch = require("snekfetch")
-const fs = require("fs");
-const warnsFile = require("./warns.json")
-let warns = JSON.parse(fs.readFileSync("./warns.json", "utf-8"))
 const client = new Discord.Client();
 
 const prefix = "-";
@@ -96,21 +92,7 @@ client.on("message", message => {
           }			
 
   });
-  client.on('message', message => {
-    if(message.content.startsWith(">warn")) {
-      var mentionUser = message.mentions.members.first()
-      let reason = message.content.split(' ').slice(1).join (' ')
-      message.channel.send("user was successfully warned")
-      if(!warns[mentionUser.id]) {
-        warns[mentionUser.id] = {
-          warns : 1,
-        };
-        fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {
-          if(err) console.log(err)
-        })
-      }
-    }
-  });
+ 
         client.on('message', message=> {
           if (message.isMentioned(client.user)) {
           message.channel.send('<@569962950241026069>');
