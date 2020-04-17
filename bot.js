@@ -13,6 +13,6 @@ client.on('ready', () => {
 client.on('message', message => {
 if(message.content.includes("test") {
    message.channel.send("hi");
-   }
+   })
 }
 client.login(process.env.BOT_TOKEN);
