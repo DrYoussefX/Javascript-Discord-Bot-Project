@@ -55,13 +55,8 @@ client.on("message", message => {
   .setTimestamp()		
   .setFooter('Twoon bot programmed by Youssef & Awebdo')
  if (message.content.startsWith("-echoembed")) {		
-  if (message.member.hasPermissions("MANAGE_MESSAGES")) {
   message.delete(1000)		
  message.channel.send({embed: embedfoo});		
-
-} else {
- message.channel.send("Sorry mate, but you are not allowed to use this command :sob:")
- }
   
 
           }			
