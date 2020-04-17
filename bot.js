@@ -9,7 +9,7 @@ const prefix = "-";
 client.on('ready', () => {
 
     console.log('I am ready!')
-);
+});
 client.on('message', message => {
 if(message.content.includes("test") {
    message.channel.send("hi");
