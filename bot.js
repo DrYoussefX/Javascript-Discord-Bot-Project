@@ -60,7 +60,7 @@ client.on("message", message => {
  
         client.on('message', message=> {
           if (message.isMentioned(client.user)) {
-          message.channel.send('<@569962950241026069>');
+          message.channel.send('Fuck off BrUh');
       }
       });
       client.on("messageDelete", (messageDelete) => {
