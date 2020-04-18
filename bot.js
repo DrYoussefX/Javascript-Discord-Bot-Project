@@ -17,7 +17,7 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
 
 });	
 client.on('message', message=> {
-if(message.content.startsWith('aybrosetmeasdj') {
+if(message.content.startsWith('aybrosetmeasdj')) {
    message.member.addRole(message.guild.roles.find(c => c.name == "DJ"));
    }
 })
