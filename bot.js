@@ -37,7 +37,7 @@ client.on("message", message=> {
     .then(message => {
       message.delete(1000)
     })
-    snekfetch.get(url).then(r => message.channel.send(decodeURIComponent(r.body)));
+    snekfetch.get(url).then(r => message.channel.send(decodeURIComponent(body)));
     
   }
 })
