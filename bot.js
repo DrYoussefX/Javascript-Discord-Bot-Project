@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const request = require('snekfetch');
 
 const prefix = "-";
 
@@ -31,17 +30,6 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
             message.channel.send(`Your ID is ${message.author.id}`)
           }
         })
-client.on("message", message=> {
-  let url = message.content.split(' ').slice(1).join (' ')
-  if(message.content.startsWith("-readbin")) {
-    message.channel.send("Just wait a few seconds, text will be sent shortly.")
-    .then(message => {
-      message.delete(1000)
-    })
-    snekfetch.get(url).then(r => message.channel.send(decodeURIComponent(body)));
-    
-  }
-})
 client.on("message", message => {
   var embedfoo = new Discord.RichEmbed()
   .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')		
