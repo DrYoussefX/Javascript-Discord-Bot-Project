@@ -20,9 +20,10 @@ client.on("message", message=>{
          if(message.content.startsWith(">mute")) {
            var mentionedUser = message.mentions.members.first()
            var muted = new Discord.RichEmbed()
+	   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	   .setTitle("Mute!")
 	   .setColor('#0099ff')
-	   .setFooter(`Mute done by ${message.author.username} ({$message.author.id})`)
+	   .setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
 	   .setDescription(`${mentionedUser.user.username} was successfully muted!}`)
 	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
 		 message.channel.sendEmbed(muted)
