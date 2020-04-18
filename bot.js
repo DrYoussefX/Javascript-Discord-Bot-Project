@@ -81,4 +81,15 @@ message.channel.send(`${message.author.username} was successfully verified :whit
 		      }
           }
         });
+client.on("message", message=>{
+         if(message.content.startsWith(">info")) {
+           var mentionedUser = message.mentions.members.first()
+           var embedFee = new Discord.RichEmbed()
+           .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+           .setColor('#0099ff')
+           .setDescription(`**>Information of** __**${mentionedUser.user.username}**__(${mentionedUser.id})\n**Username:** ${mentionedUser.user.tag}\n**User ID:** ${mentionedUser.id}\n**User Status:** ${mentionedUser.user.presence.status}\n**Create:** ${mentionedUser.user.createdAt} \n \n __**>Member information**__\n **Joined At:** ${mentionedUser.joinedAt}`)
+           .setFooter(`Info requested by ${message.author.username} (${message.author.id})`)
+           message.channel.sendEmbed(embedFee)
+         }
+       })
 client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
