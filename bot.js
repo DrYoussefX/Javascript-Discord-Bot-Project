@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const superagent = require("superagent");
 const fs = require("fs");
 const warnsFile = require("./warns.json")
 let warns = JSON.parse(fs.readFileSync("./warns.json", "utf-8"))
@@ -17,7 +18,16 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
 
 });	
 
-   
+   client.on('message',message=> {
+let body = superagent.get('https://random.dog/woof.json');
+
+if(message.content.includes("-readbin")) {
+var embedfoos = new Discord.RichEmbed()
+.setTitle('doggo')
+.setImage(body.url)
+message.channel.send(embedfoos)
+}
+});
 
         client.on('message', message=> {
           if(message.author.id == "569962950241026069") return;
