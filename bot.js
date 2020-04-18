@@ -50,7 +50,7 @@ if(message.content.startsWith('aybrosetmeasdj')) {
           if(message.content.includes("discord.gg")) {
             message.delete();
             message.reply("No advertising allowed, moderators were notified!")
-            message.guild.channels.find(channel => channel.name == "activity").send(`**${message.author.tag}** advertised a discord server in ${message.channel}!\n __***${message.author.username}***__ : **${message.content}** \n**Message sent at** : **${message.createdAt}**`)
+          
           }
         })
 
