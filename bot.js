@@ -16,6 +16,18 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
  .catch(console.error);
 
 });
+client.on("message", message=>{
+         if(message.content.startsWith(">mute")) {
+           var mentionedUser = message.mentions.members.first()
+           var muted = new Discord.RichEmbed()
+	   .setTitle("Mute!")
+	   .setColor('#0099ff')
+	   .setFooter(`Mute done by ${message.author.username} ({$message.author.id})`)
+	   .setDescription(`${mentionedUser.user.username} was successfully muted!}`)
+	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
+	 }
+});
+			   
 client.on('message', message=> {
 if(message.content.startsWith('>coronavirus')) {
    var corona = new Discord.RichEmbed()
