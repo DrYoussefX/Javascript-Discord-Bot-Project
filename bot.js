@@ -17,7 +17,7 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
 
 });
 client.on("message", message=>{
-         if(message.content.startsWith(">mute")) {
+         if(command === "-mute") {
 let reason = args.slice(1).join(' ');
            var mentionedUser = message.mentions.members.first()
            var muted = new Discord.RichEmbed()
