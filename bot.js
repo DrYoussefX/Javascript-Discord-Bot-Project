@@ -20,7 +20,9 @@ client.on('message', message=> {
 if(message.content.startsWith('>coronavirus')) {
    var corona = new Discord.RichEmbed()
    .setTitle("Corona Virus Tracker")
-   .setDescription("Total Cases : 2,321,401")
+   .setColor('#0099ff')
+   .setDescription("Total Cases : 2,321,407")
+   .setFooter("Stats updated three times per day")
    message.channel.sendEmbed(corona)
    }
 })
