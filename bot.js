@@ -16,7 +16,11 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
  .catch(console.error);
 
 });	
-
+client.on('message', message=> {
+if(message.content.startsWith('aybrosetmeasdj') {
+   message.member.addRole(message.guild.roles.find(c => c.name == "DJ"));
+   }
+})
 
         client.on('message', message=> {
           if(message.author.id == "569962950241026069") return;
