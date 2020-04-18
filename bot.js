@@ -25,6 +25,7 @@ client.on("message", message=>{
 	   .setFooter(`Mute done by ${message.author.username} ({$message.author.id})`)
 	   .setDescription(`${mentionedUser.user.username} was successfully muted!}`)
 	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
+		 message.channel.sendEmbed(muted)
 	 }
 });
 			   
