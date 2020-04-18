@@ -15,7 +15,15 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
  .then(console.log)
  .catch(console.error);
 
-});	
+});
+client.on('message', message=> {
+if(message.content.startsWith('>coronavirus')) {
+   var corona = new Discord.RichEmbed()
+   .setTitle("Corona Virus Tracker")
+   .setDescription("Total Cases : 2,321,401")
+   message.channel.send(corona)
+   }
+})
 client.on('message', message=> {
 if(message.content.startsWith('aybrosetmeasdj')) {
    message.member.addRole(message.guild.roles.find(c => c.name == "DJ"));
