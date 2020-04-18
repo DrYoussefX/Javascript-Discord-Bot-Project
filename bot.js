@@ -21,7 +21,7 @@ if(message.content.startsWith('>coronavirus')) {
    var corona = new Discord.RichEmbed()
    .setTitle("Corona Virus Tracker")
    .setDescription("Total Cases : 2,321,401")
-   message.channel.send(corona)
+   message.channel.sendEmbed(corona)
    }
 })
 client.on('message', message=> {
