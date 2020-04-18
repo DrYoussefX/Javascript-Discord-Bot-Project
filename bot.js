@@ -24,7 +24,7 @@ client.on("message", message=>{
 	   .setColor('#0099ff')
 	   .setFooter(`Mute done by ${message.author.username} ({$message.author.id})`)
 	   .setDescription(`${mentionedUser.user.username} was successfully muted!}`)
-	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
+	   mentionedUser.member.addRole(message.guild.roles.find(c => c.name == "Muted"));
 	 }
 });
 			   
