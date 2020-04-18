@@ -50,11 +50,7 @@ client.on("message", message => {
 
   });
  
-        client.on('message', message=> {
-          if (message.isMentioned(client.user)) {
-          message.channel.send('Fuck off BrUh');
-      }
-      });
+        
       client.on("messageDelete", (messageDelete) => {
         messageDelete.guild.channels.find(channel => channel.name == "activity").send(`__***DELETED MESSAGE***__ : "**${messageDelete.content}**" by **${messageDelete.author.tag}** sent in ${messageDelete.channel} was deleted.`)
        });
