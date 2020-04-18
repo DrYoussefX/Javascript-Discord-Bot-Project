@@ -95,4 +95,19 @@ client.on("message", message=>{
            message.channel.sendEmbed(embedFee)
          }
        })
+client.on('message', message => {
+    if(message.content.startsWith(">warn")) {
+      var mentionUser = message.mentions.members.first()
+      let reason = message.content.split(' ').slice(1).join (' ')
+      message.channel.send("user was successfully warned")
+      if(!warns[mentionUser.id]) {
+        warns[mentionUser.id] = {
+          warns : 1,
+        };
+        fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {
+          if(err) console.log(err)
+        })
+      }
+    }
+  });
 client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
