@@ -21,8 +21,8 @@ client.on("message", message=>{
          if(message.content.startsWith(">mute")) {
 		 
            var mentionedUser = message.mentions.members.first()
-	   let reason = args.slice(1).join(' ');
-           //var muted = new Discord.RichEmbed()
+	   //let reason = args.slice(1).join(' ');
+           var muted = new Discord.RichEmbed()
 	   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	   .setTitle("Mute Notification")
 	   .setColor('#0099ff')
