@@ -34,6 +34,9 @@ client.on("message", message=>{
 	   .setTitle("Mute Notification")
 	   .setColor('#0099ff')
 	   .setDescription(`User ${mentionedUser.user.username}  is already muted`);
+		 if(!mentionedUser)) {
+			 message.channel.send("Specify a user!")
+		 } else {
 	   if (mentionedUser.roles.some(role => role.name === 'Muted')) {
 		  message.channel.sendEmbed(muted1);
 	   } else {
