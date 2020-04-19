@@ -24,22 +24,24 @@ client.on("message", message=>{
 		 
            var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
-           var muted = new Discord.RichEmbed()
+         
+	   
+		 if(!mentionedUser) {
+			 message.channel.send("Specify a user!")
+		 } else {
+	   if (mentionedUser.roles.some(role => role.name === 'Muted')) {
+		   var muted1 = new Discord.RichEmbed()
+	   .setTitle("Mute Notification")
+	   .setColor('#0099ff')
+	   .setDescription(`User ${mentionedUser.user.username}  is already muted`);
+		  message.channel.sendEmbed(muted1);
+	   } else {
+		     var muted = new Discord.RichEmbed()
 	   //.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	   .setTitle("Mute Notification")
 	   .setColor('#0099ff')
 	   .setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
 	   .setDescription(`${mentionedUser.user.username} was successfully muted!`)
-	   var muted1 = new Discord.RichEmbed()
-	   .setTitle("Mute Notification")
-	   .setColor('#0099ff')
-	   .setDescription(`User ${mentionedUser.user.username}  is already muted`);
-		 if(!mentionedUser) {
-			 message.channel.send("Specify a user!")
-		 } else {
-	   if (mentionedUser.roles.some(role => role.name === 'Muted')) {
-		  message.channel.sendEmbed(muted1);
-	   } else {
 	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
 		 message.channel.sendEmbed(muted)
 	   }
