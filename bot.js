@@ -19,9 +19,10 @@ client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
 client.on("message", message=>{
 	
          if(message.content.startsWith(">mute")) {
-		 let reason = args.slice(1).join(' ');
+		 
            var mentionedUser = message.mentions.members.first()
-           var muted = new Discord.RichEmbed()
+	   let reason = args.slice(1).join(' ');
+           //var muted = new Discord.RichEmbed()
 	   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	   .setTitle("Mute Notification")
 	   .setColor('#0099ff')
@@ -37,7 +38,7 @@ if(message.content.startsWith('>coronavirus')) {
    var corona = new Discord.RichEmbed()
    .setTitle("Corona Virus Tracker")
    .setColor('#0099ff')
-   .setDescription("Total Cases : 2,341,479")
+   .setDescription("Total Cases : 2,373,035")
    .setFooter("Stats updated three times per day")
    message.channel.sendEmbed(corona)
    }
