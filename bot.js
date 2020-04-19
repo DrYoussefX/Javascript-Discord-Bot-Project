@@ -42,6 +42,7 @@ client.on("message", message=>{
 	   } else {
 	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
 		 message.channel.sendEmbed(muted)
+	   }
 		 
 	 }
 	 }
