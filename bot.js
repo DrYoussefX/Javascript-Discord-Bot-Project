@@ -24,12 +24,12 @@ client.on("message", message=>{
 		 
            var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
-           //var muted = new Discord.RichEmbed()
+           var muted = new Discord.RichEmbed()
 	   //.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
-	   //.setTitle("Mute Notification")
-	   //.setColor('#0099ff')
-	   //.setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
-	  // .setDescription(`${mentionedUser.user.username} was successfully muted!`)
+	   .setTitle("Mute Notification")
+	   .setColor('#0099ff')
+	   .setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
+	   .setDescription(`${mentionedUser.user.username} was successfully muted!`)
 	   if (mentionedUser.roles.some(role => role.name === 'Muted')) {
 		  message.channel.send("You're already muted!");
 	   } else {
