@@ -37,6 +37,7 @@ client.on("message", message=>{
 		 message.channel.sendEmbed(muted)
 		 
 	 }
+	 }
 });
 			   
 client.on('message', message=> {
