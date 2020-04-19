@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const fs = require("fs");
 const warnsFile = require("./warns.json")
 let warns = JSON.parse(fs.readFileSync("./warns.json", "utf-8"))
+let token = "NzAwODM1NDE3MjUxMTE5MTk1.Xpy3cQ.J9M6eX6PwK1zA2XFtJOIWP9wbEY"
 
 const prefix = "-";
 
@@ -137,4 +138,4 @@ client.on('message', message => {
       }
     }
   });
-client.login('NzAwODM1NDE3MjUxMTE5MTk1.Xpy3cQ.J9M6eX6PwK1zA2XFtJOIWP9wbEY');//where BOT_TOKEN is the token of our bot
+client.login(token);//where BOT_TOKEN is the token of our bot
