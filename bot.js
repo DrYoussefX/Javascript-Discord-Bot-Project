@@ -30,8 +30,12 @@ client.on("message", message=>{
 	   .setColor('#0099ff')
 	   .setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
 	   .setDescription(`${mentionedUser.user.username} was successfully muted!`)
+	   if (mentionedUser.roles.some(role => role.name === 'Muted')) {
+		  message.channel.send("You're already verified!");
+	   } else {
 	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
 		 message.channel.sendEmbed(muted)
+		 
 	 }
 });
 			   
