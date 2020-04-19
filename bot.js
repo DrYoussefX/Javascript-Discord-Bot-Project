@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const fs = require("fs");
 const warnsFile = require("./warns.json")
 let warns = JSON.parse(fs.readFileSync("./warns.json", "utf-8"))
-let token = "NzAwODM1NDE3MjUxMTE5MTk1.Xpy3cQ.J9M6eX6PwK1zA2XFtJOIWP9wbEY"
+let token = "NzAwODM1NDE3MjUxMTE5MTk1.Xpy4mg.TsyRuykjdgwB6aF58xGp9ysj2a8"
 
 const prefix = "-";
 
