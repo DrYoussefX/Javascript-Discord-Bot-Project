@@ -66,7 +66,7 @@ if(message.content.startsWith('aybrosetmeasdj')) {
         })
 client.on("message", message => {
   var embedfoo = new Discord.RichEmbed()
-  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')		
+  .setAuthor('Twoon BOT', 'https://media.discordapp.net/attachments/701182586180993184/701190662321602731/Untitled.png')		
   .setTitle('Echo!')		
   .setColor('#0099ff')		
   .setDescription(message.content.replace('-echoembed', ''))		
