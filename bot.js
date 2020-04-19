@@ -11,9 +11,10 @@ const prefix = "-";
 client.on('ready', () => {
 
     console.log('I am ready!')
-client.user.setPresence({ game: { name: 'with discord.js' }, status: 'idle' })
- .then(console.log)
- .catch(console.error);
+client.user.setActivity("with depression", {
+  type: "STREAMING",
+  url: "https://www.twitch.tv/monstercat"
+})
 
 });
 client.on("message", message=>{
