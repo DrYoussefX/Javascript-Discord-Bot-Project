@@ -8,11 +8,15 @@ const prefix = "-";
 
  
 
-client.on('ready', () => {
-
-    console.log('I am ready!')
-   client.user.setStatus('dnd', 'fras')
-});
+client.on("ready", () => {
+    client.user.setPresence({
+        game: { 
+            name: 'my code',
+            type: 'WATCHING'
+        },
+        status: 'idle'
+    })
+})
 client.on("message", message=>{
 	
          if(message.content.startsWith(">mute")) {
