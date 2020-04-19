@@ -11,11 +11,7 @@ const prefix = "-";
 client.on('ready', () => {
 
     console.log('I am ready!')
-client.user.setActivity("with depression", {
-  type: "STREAMING",
-  url: "https://www.twitch.tv/monstercat"
-})
-
+   client.user.setStatus('dnd', 'fras')
 });
 client.on("message", message=>{
 	
