@@ -32,17 +32,13 @@ client.on("message", message=>{
         .setTitle("Kick Notification")
         .setColor('#0099ff')
         .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
-        .setDescription(`${member.username} was successfully kicked!`)
+        .setDescription(`${member.user.username} was successfully kicked!`)
       if (member) {
-        /**
-         * Kick the member
-         * Make sure you run this on a member, not a user!
-         * There are big differences between a user and a member
-         */
+      
         member
           .kick('Kicked from server')
           .then(() => {
-            // We let the message author know we were able to kick the person
+        
             message.channel.sendEmbed(kick)
           })
       }
