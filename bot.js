@@ -23,6 +23,14 @@ client.on("message", message=>{
          if(message.content.startsWith(">unmute")) {
 		  var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
+		   if(!mentionedUser) {
+			 var unmute = new Discord.RichEmbed()
+			 .setTitle("Command: Unmute")
+			 .setColor('#0099ff')
+			 .setDescription("Unmute a muted member to be able to send messages in text channels!\n **USAGE** :- \n >unmute [user] (Mentioned User) \n **Examples** :- >unmute @Youssef")
+				 
+			 message.channel.sendEmbed(unmute)
+		 } else {
 		   if (!mentionedUser.roles.some(role => role.name === 'Muted')) {
 		   var unmute1 = new Discord.RichEmbed()
 	   .setTitle("Unute Notification")
@@ -40,14 +48,7 @@ client.on("message", message=>{
          if(!message.member.hasPermission('ADMINISTRATOR')) {
 		 message.channel.send("No sufficient perms")
 	 } else {
-		  if(!mentionedUser) {
-			 var unmute = new Discord.RichEmbed()
-			 .setTitle("Command: Unmute")
-			 .setColor('#0099ff')
-			 .setDescription("Unmute a muted member to be able to send messages in text channels!\n **USAGE** :- \n >unmute [user] (Mentioned User) \n **Examples** :- >unmute @Youssef")
-				 
-			 message.channel.sendEmbed(unmute)
-		 } else {
+		 
 			
 		    var unmuted = new Discord.RichEmbed()
 	   //.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
