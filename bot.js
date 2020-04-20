@@ -28,7 +28,7 @@ client.on("message", message=>{
 			 .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 			 .setTitle("Command: Unmute")
 			 .setColor('#0099ff')
-			 .setDescription("Unmute a muted member to be able to send messages in text channels!\n **USAGE** :- \n >unmute [user] (Mentioned User) \n **Examples** :- >unmute @Youssef")
+			 .setDescription("Unmute a muted member to be able to send messages in text channels!\n **USAGE** :- \n >unmute [user] (Mentioned User) \n **Examples** :- \n>unmute @Youssef")
 				 
 			 message.channel.sendEmbed(unmute)
 		 } else {
@@ -89,7 +89,7 @@ client.on("message", message=>{
 			 var muted3 = new Discord.RichEmbed()
 			 .setTitle("Command: Mute")
 			 .setColor('#0099ff')
-			 .setDescription("Mute a member from texting in text channels!\n **USAGE** :- \n >mute [user] (Mentioned User) \n **Examples** :- >mute @Youssef")
+			 .setDescription("Mute a member from texting in text channels!\n **USAGE** :- \n >mute [user] (Mentioned User) \n **Examples** :- \n>mute @Youssef")
 				 
 			 message.channel.sendEmbed(muted3)
 		 } else {
@@ -170,7 +170,7 @@ if(message.content.startsWith('aybrosetmeasdj')) {
 client.on("message", message => {
   var embedfoo = new Discord.RichEmbed()
   .setAuthor('Twoon BOT', 'https://media.discordapp.net/attachments/701182586180993184/701190662321602731/Untitled.png')		
-  .setTitle('Echo!')		
+  .setTitle('BOT Features update')		
   .setColor('#0099ff')		
   .setDescription(message.content.replace('-echoembed', ''))		
   .setTimestamp()		
