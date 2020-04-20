@@ -19,6 +19,19 @@ client.on("ready", () => {
     })
 })
 client.on("message", message=>{
+	if(message.content.startsWith(">kick")) {
+        let kickedUser = message.mentions.memberss.first
+        let kick = new Discord.RichEmbed()
+        .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+        .setTitle("Kick Notification")
+        .setColor('#0099ff')
+        .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
+        .setDescription(`${mentionedUser.user.username} was successfully kicked!`)
+        member.kick()
+        message.channel.sendEmbed(kick)
+    }
+});
+client.on("message", message=>{
 	
          if(message.content.startsWith(">unmute")) {
 		  var mentionedUser = message.mentions.members.first()
