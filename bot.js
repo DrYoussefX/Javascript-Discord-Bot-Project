@@ -20,15 +20,32 @@ client.on("ready", () => {
 })
 client.on("message", message=>{
 	if(message.content.startsWith(">kick")) {
-        let kickedUser = message.mentions.members.first
+        //let kickedUser = message.mentions.members.first
         let kick = new Discord.RichEmbed()
         //.setAuthor(`${kickedUser.user.username}`, `${kickedUser.user.avatarURL}`)
         .setTitle("Kick Notification")
         .setColor('#0099ff')
         .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
         .setDescription(`${kickedUser.username} was successfully kicked!`)
-        kickedUser.kick()
-        message.channel.sendEmbed(kick)
+        const user = message.mentions.users.first();
+    // If we have a user mentioned
+    if (user) {
+      // Now we get the member from the user
+      const member = message.guild.member(user);
+      // If the member is in the guild
+      if (member) {
+        /**
+         * Kick the member
+         * Make sure you run this on a member, not a user!
+         * There are big differences between a user and a member
+         */
+        member
+          .kick('Kicked from server')
+          .then(() => {
+            // We let the message author know we were able to kick the person
+            message.channel.sendEmbed(kick))
+          })
+        
     }
 });
 client.on("message", message=>{
