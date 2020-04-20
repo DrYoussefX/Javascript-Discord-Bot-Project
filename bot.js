@@ -43,7 +43,7 @@ client.on("message", message=>{
           .kick('Kicked from server')
           .then(() => {
             // We let the message author know we were able to kick the person
-            message.channel.sendEmbed(kick))
+            message.channel.sendEmbed(kick)
           })
         
     }
