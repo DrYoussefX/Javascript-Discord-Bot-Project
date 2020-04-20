@@ -20,7 +20,7 @@ client.on("ready", () => {
 })
 client.on("message", message=>{
 	if(message.content.startsWith(">kick")) {
-        let kickedUser = message.mentions.memberss.first
+        let kickedUser = message.mentions.members.first
         let kick = new Discord.RichEmbed()
         .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
         .setTitle("Kick Notification")
