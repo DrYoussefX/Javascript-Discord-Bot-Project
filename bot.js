@@ -31,6 +31,16 @@ client.on("message", message=>{
 				 
 			 message.channel.sendEmbed(unmute)
 		 } else {
+			  if(!message.member.hasPermission('ADMINISTRATOR')) {
+		 message.channel.send("No sufficient perms")
+	 } else {
+		 if(message.member = mentionedUser) {
+		   var mutedself = new Discord.RichEmbed()
+		   .setTitle("Mute Notification")
+		   .setColor('#0099ff')
+		   .setDescription(`You can't unmute yourself, ${mentionedUser.user.username}`);
+		   message.channel.sendEmbed(mutedself)
+	   } else {
 		   if (!mentionedUser.roles.some(role => role.name === 'Muted')) {
 		   var unmute1 = new Discord.RichEmbed()
 	   .setTitle("Unute Notification")
@@ -38,16 +48,8 @@ client.on("message", message=>{
 	   .setDescription(`User ${mentionedUser.user.username}  is not muted!`);
 		  message.channel.sendEmbed(unmute1);
 	   } else {
-		  if(message.member = mentionedUser) {
-		   var mutedself = new Discord.RichEmbed()
-		   .setTitle("Mute Notification")
-		   .setColor('#0099ff')
-		   .setDescription(`You can't unmute yourself, ${mentionedUser.user.username}`);
-		   message.channel.sendEmbed(mutedself)
-	   } else {
-         if(!message.member.hasPermission('ADMINISTRATOR')) {
-		 message.channel.send("No sufficient perms")
-	 } else {
+		  
+        
 		 
 			
 		    var unmuted = new Discord.RichEmbed()
