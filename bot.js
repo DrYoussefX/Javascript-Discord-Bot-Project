@@ -25,7 +25,7 @@ client.on("message", message=>{
 	   //let reason = args.slice(1).join(' ');
 		   if(!mentionedUser) {
 			 var unmute = new Discord.RichEmbed()
-			 .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+			 
 			 .setTitle("Command: Unmute")
 			 .setColor('#0099ff')
 			 .setDescription("Unmute a muted member to be able to send messages in text channels!\n **USAGE** :- \n >unmute [user] (Mentioned User) \n **Examples** :- \n>unmute @Youssef")
