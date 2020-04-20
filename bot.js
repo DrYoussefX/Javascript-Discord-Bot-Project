@@ -83,7 +83,7 @@ client.on("message", message=>{
 			 if(!message.member.hasPermission('ADMINISTRATOR')) {
 		 message.channel.send("No sufficient perms")
 	 } else {
-	   if(message.member = mentionedUser) {
+	   if(message.member == mentionedUser) {
 		   var mutedself = new Discord.RichEmbed()
 		   .setTitle("Mute Notification")
 		   .setColor('#0099ff')
