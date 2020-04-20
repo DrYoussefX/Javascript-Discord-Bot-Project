@@ -175,7 +175,7 @@ client.on("message", message => {
   .setDescription(message.content.replace('-echoembed', ''))		
   .setTimestamp()		
   .setFooter('Twoon bot programmed by Youssef & Awebdo')
- if (message.content.startsWith("-echoembed")) {		
+ if (message.content.startsWith(">echoembed")) {		
   message.delete(1000)		
  message.channel.send({embed: embedfoo});		
   
