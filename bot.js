@@ -23,11 +23,18 @@ client.on("message", message=>{
          if(message.content.startsWith(">unmute")) {
 		  var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
+		   if (!mentionedUser.roles.some(role => role.name === 'Muted')) {
+		   var unmute1 = new Discord.RichEmbed()
+	   .setTitle("Unute Notification")
+	   .setColor('#0099ff')
+	   .setDescription(`User ${mentionedUser.user.username}  is not muted!`);
+		  message.channel.sendEmbed(unmute1);
+	   } else {
 		  if(message.member = mentionedUser) {
 		   var mutedself = new Discord.RichEmbed()
 		   .setTitle("Mute Notification")
 		   .setColor('#0099ff')
-		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}`);
+		   .setDescription(`You can't unmute yourself, ${mentionedUser.user.username}`);
 		   message.channel.sendEmbed(mutedself)
 	   } else {
          if(!message.member.hasPermission('ADMINISTRATOR')) {
@@ -41,13 +48,7 @@ client.on("message", message=>{
 				 
 			 message.channel.sendEmbed(unmute)
 		 } else {
-			 if (!mentionedUser.roles.some(role => role.name === 'Muted')) {
-		   var unmute1 = new Discord.RichEmbed()
-	   .setTitle("Unute Notification")
-	   .setColor('#0099ff')
-	   .setDescription(`User ${mentionedUser.user.username}  is not muted!`);
-		  message.channel.sendEmbed(unmute1);
-	   } else {
+			
 		    var unmuted = new Discord.RichEmbed()
 	   //.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	   .setTitle("Mute Notification")
