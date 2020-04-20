@@ -47,7 +47,7 @@ client.on("message", message=>{
 		   .setTitle("Unute Notification")
 		   .setColor('#0099ff')
 		   .setFooter(`Unmute attempt by ${message.author.username} (${message.author.id})`)
-		   .setDescription(`You can't unmute yourself, ${mentionedUser.user.username}`);
+		   .setDescription(`You can't unmute yourself, ${mentionedUser.user.username}!`);
 		   message.channel.sendEmbed(mutedself)
 	   } else {
 		   if (!mentionedUser.roles.some(role => role.name === 'Muted')) {
@@ -107,7 +107,7 @@ client.on("message", message=>{
 		   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 		   .setTitle("Mute Notification")
 		   .setColor('#0099ff')
-		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}`)
+		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}!`)
 		   .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`);
 		   message.channel.sendEmbed(mutedself)
 	   } else {
