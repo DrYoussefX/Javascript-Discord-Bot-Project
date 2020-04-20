@@ -25,6 +25,7 @@ client.on("message", message=>{
 	   //let reason = args.slice(1).join(' ');
 		   if(!mentionedUser) {
 			 var unmute = new Discord.RichEmbed()
+			 .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 			 .setTitle("Command: Unmute")
 			 .setColor('#0099ff')
 			 .setDescription("Unmute a muted member to be able to send messages in text channels!\n **USAGE** :- \n >unmute [user] (Mentioned User) \n **Examples** :- >unmute @Youssef")
@@ -36,6 +37,7 @@ client.on("message", message=>{
 	 } else {
 		 if(message.member == mentionedUser) {
 		   var mutedself = new Discord.RichEmbed()
+		   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 		   .setTitle("Mute Notification")
 		   .setColor('#0099ff')
 		   .setDescription(`You can't unmute yourself, ${mentionedUser.user.username}`);
@@ -43,6 +45,8 @@ client.on("message", message=>{
 	   } else {
 		   if (!mentionedUser.roles.some(role => role.name === 'Muted')) {
 		   var unmute1 = new Discord.RichEmbed()
+		   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+	.setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
 	   .setTitle("Unute Notification")
 	   .setColor('#0099ff')
 	   .setDescription(`User ${mentionedUser.user.username}  is not muted!`);
@@ -54,7 +58,7 @@ client.on("message", message=>{
 			
 		    var unmuted = new Discord.RichEmbed()
 	   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
-	   .setTitle("Mute Notification")
+	   .setTitle("Unmute Notification")
 	   .setColor('#0099ff')
 	   .setFooter(`Unmute done by ${message.author.username} (${message.author.id})`)
 	   .setDescription(`${mentionedUser.user.username} was successfully unmuted!`)
@@ -87,9 +91,11 @@ client.on("message", message=>{
 	 } else {
 	   if(message.member == mentionedUser) {
 		   var mutedself = new Discord.RichEmbed()
+		   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 		   .setTitle("Mute Notification")
 		   .setColor('#0099ff')
-		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}`);
+		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}`)
+		   .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`);
 		   message.channel.sendEmbed(mutedself)
 	   } else {
 		    
@@ -103,7 +109,7 @@ client.on("message", message=>{
 		  message.channel.sendEmbed(muted1);
 	   } else {
 		     var muted = new Discord.RichEmbed()
-	   //.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+	   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	   .setTitle("Mute Notification")
 	   .setColor('#0099ff')
 	   .setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
