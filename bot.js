@@ -174,8 +174,8 @@ client.on("message", message => {
   .setColor('#0099ff')		
   .setDescription(message.content.replace('>embedsay', ''))		
   .setTimestamp()		
-  .setFooter('Twoon bot programmed by Youssef & Awebdo')
- if (message.content.startsWith(">embedsay")) {		
+  .setFooter('Twoon bot programmed by Youssef')
+ if (message.content.startsWith(">featureup")) {		
   message.delete(1000)		
  message.channel.send({embed: embedfoo});		
   
