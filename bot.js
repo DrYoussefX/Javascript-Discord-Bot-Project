@@ -72,14 +72,7 @@ client.on("message", message=>{
 		 
            var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
-	   if(message.member = mentionedUser) {
-		   var mutedself = new Discord.RichEmbed()
-		   .setTitle("Mute Notification")
-		   .setColor('#0099ff')
-		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}`);
-		   message.channel.sendEmbed(mutedself)
-	   } else {
-		    if(!mentionedUser) {
+	   if(!mentionedUser) {
 			 var muted3 = new Discord.RichEmbed()
 			 .setTitle("Command: Mute")
 			 .setColor('#0099ff')
@@ -87,9 +80,18 @@ client.on("message", message=>{
 				 
 			 message.channel.sendEmbed(muted3)
 		 } else {
-         if(!message.member.hasPermission('ADMINISTRATOR')) {
+			 if(!message.member.hasPermission('ADMINISTRATOR')) {
 		 message.channel.send("No sufficient perms")
 	 } else {
+	   if(message.member = mentionedUser) {
+		   var mutedself = new Discord.RichEmbed()
+		   .setTitle("Mute Notification")
+		   .setColor('#0099ff')
+		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}`);
+		   message.channel.sendEmbed(mutedself)
+	   } else {
+		    
+         
 		
 	   if (mentionedUser.roles.some(role => role.name === 'Muted')) {
 		   var muted1 = new Discord.RichEmbed()
