@@ -22,16 +22,17 @@ client.on("message", message=>{
 	if(message.content.startsWith(">kick")) {
         
         //let kickedUser = message.mentions.members.first
-        let kick = new Discord.RichEmbed()
-        //.setAuthor(`${kickedUser.user.username}`, `${kickedUser.user.avatarURL}`)
-        .setTitle("Kick Notification")
-        .setColor('#0099ff')
-        .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
-        .setDescription(`${kickedUser.username} was successfully kicked!`)
+        
         const user = message.mentions.users.first();
 
     if (user) {
          const member = message.guild.member(user);
+	    let kick = new Discord.RichEmbed()
+        //.setAuthor(`${kickedUser.user.username}`, `${kickedUser.user.avatarURL}`)
+        .setTitle("Kick Notification")
+        .setColor('#0099ff')
+        .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
+        .setDescription(`${member.username} was successfully kicked!`)
          if(!member){
              let nomember = new Discord.RichEmbed()
              .setAuthor(`${member.user.username}`, `${member.user.avatarURL}`)
