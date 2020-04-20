@@ -33,13 +33,20 @@ client.on("message", message=>{
 			 message.channel.sendEmbed(unmute)
 		 } else {
 			  if(!message.member.hasPermission('ADMINISTRATOR')) {
-		 message.channel.send("No sufficient perms")
+				  var noperms = new Discord.RichEmbed()
+		.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+		   .setTitle("Unmute Notification")
+		   .setColor('#0099ff')
+		   .setFooter(`Unmute attempt by ${message.author.username} (${message.author.id})`)
+		   .setDescription(`Sorry, ${mentionedUser.user.username}, you lack permissions for this command.`);
+		 message.channel.sendEmbed(noperms)
 	 } else {
 		 if(message.member == mentionedUser) {
 		   var mutedself = new Discord.RichEmbed()
 		   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
-		   .setTitle("Mute Notification")
+		   .setTitle("Unute Notification")
 		   .setColor('#0099ff')
+		   .setFooter(`Unmute attempt by ${message.author.username} (${message.author.id})`)
 		   .setDescription(`You can't unmute yourself, ${mentionedUser.user.username}`);
 		   message.channel.sendEmbed(mutedself)
 	   } else {
@@ -47,7 +54,7 @@ client.on("message", message=>{
 		   var unmute1 = new Discord.RichEmbed()
 		   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	.setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
-	   .setTitle("Unute Notification")
+	   .setTitle("Unmute Notification")
 	   .setColor('#0099ff')
 	   .setDescription(`User ${mentionedUser.user.username}  is not muted!`);
 		  message.channel.sendEmbed(unmute1);
@@ -87,7 +94,13 @@ client.on("message", message=>{
 			 message.channel.sendEmbed(muted3)
 		 } else {
 			 if(!message.member.hasPermission('ADMINISTRATOR')) {
-		 message.channel.send("No sufficient perms")
+		  var noperms1 = new Discord.RichEmbed()
+		.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+		   .setTitle("Mute Notification")
+		   .setColor('#0099ff')
+		   .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
+		   .setDescription(`Sorry, ${mentionedUser.user.username}, you lack permissions for this command.`);
+		 message.channel.sendEmbed(noperms1)
 	 } else {
 	   if(message.member == mentionedUser) {
 		   var mutedself = new Discord.RichEmbed()
