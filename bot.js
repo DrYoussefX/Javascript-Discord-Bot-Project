@@ -62,6 +62,9 @@ client.on("message", message=>{
 		 
            var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
+	   if(message.member = mentionedUser) {
+		   message.channel.send("You can't mute yourself")
+	   } else {
          if(!message.member.hasPermission('ADMINISTRATOR')) {
 		 message.channel.send("No sufficient perms")
 	 } else {
@@ -88,6 +91,7 @@ client.on("message", message=>{
 	   .setDescription(`${mentionedUser.user.username} was successfully muted!`)
 	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
 		 message.channel.sendEmbed(muted)
+	   }
 	   }
 	   }
 		 
