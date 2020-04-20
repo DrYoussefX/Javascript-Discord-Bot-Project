@@ -20,29 +20,37 @@ client.on("ready", () => {
 })
 client.on("message", message=>{
 	if(message.content.startsWith(">kick")) {
-        //let kickedUser = message.mentions.members.first
         
-        const user = message.mentions.users.first();
-    // If we have a user mentioned
-    if (user) {
-      // Now we get the member from the user
-      const member = message.guild.member(user);
-      let kick = new Discord.RichEmbed()
-        .setAuthor(`${member.user.username}`, `${member.user.avatarURL}`)
+        //let kickedUser = message.mentions.members.first
+        let kick = new Discord.RichEmbed()
+        //.setAuthor(`${kickedUser.user.username}`, `${kickedUser.user.avatarURL}`)
         .setTitle("Kick Notification")
         .setColor('#0099ff')
         .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
-        .setDescription(`${member.user.username} was successfully kicked!`)
+        .setDescription(`${kickedUser.username} was successfully kicked!`)
+        const user = message.mentions.users.first();
+
+    if (user) {
+         const member = message.guild.member(user);
+         if(!member){
+             let nomember = new Discord.RichEmbed()
+             .setAuthor(`${member.user.username}`, `${member.user.avatarURL}`)
+             .setTitle("Kick Notification")
+             .setColor('#0099ff')
+             //.setFooter(`Kick attempt by ${message.author.username} (${message.author.id})`)
+             .setDescription(`Kick a member from your discord server!\n **USAGE** :- \n >kick [user] (Mentioned User) \n **Examples** :- \n>kick @Youssef`)
+         } else {
       if (member) {
-      
+
         member
           .kick('Kicked from server')
           .then(() => {
-        
+
             message.channel.sendEmbed(kick)
           })
       }
     }
+}
 }
 });
 client.on("message", message=>{
