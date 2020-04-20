@@ -26,7 +26,7 @@ client.on("message", message=>{
         .setTitle("Kick Notification")
         .setColor('#0099ff')
         .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
-        .setDescription(`${kickedUser.user.username} was successfully kicked!`)
+        .setDescription(`${kickedUser.username} was successfully kicked!`)
         kickedUser.kick()
         message.channel.sendEmbed(kick)
     }
