@@ -172,10 +172,10 @@ client.on("message", message => {
   .setAuthor('Twoon BOT', 'https://media.discordapp.net/attachments/701182586180993184/701190662321602731/Untitled.png')		
   .setTitle('BOT Features update')		
   .setColor('#0099ff')		
-  .setDescription(message.content.replace('-echoembed', ''))		
+  .setDescription(message.content.replace('>embedsay', ''))		
   .setTimestamp()		
   .setFooter('Twoon bot programmed by Youssef & Awebdo')
- if (message.content.startsWith(">echoembed")) {		
+ if (message.content.startsWith(">embedsay")) {		
   message.delete(1000)		
  message.channel.send({embed: embedfoo});		
   
