@@ -21,18 +21,18 @@ client.on("ready", () => {
 client.on("message", message=>{
 	if(message.content.startsWith(">kick")) {
         //let kickedUser = message.mentions.members.first
-        let kick = new Discord.RichEmbed()
-        //.setAuthor(`${kickedUser.user.username}`, `${kickedUser.user.avatarURL}`)
-        .setTitle("Kick Notification")
-        .setColor('#0099ff')
-        .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
-        .setDescription(`${kickedUser.username} was successfully kicked!`)
+        
         const user = message.mentions.users.first();
     // If we have a user mentioned
     if (user) {
       // Now we get the member from the user
       const member = message.guild.member(user);
-      // If the member is in the guild
+      let kick = new Discord.RichEmbed()
+        //.setAuthor(`${kickedUser.user.username}`, `${kickedUser.user.avatarURL}`)
+        .setTitle("Kick Notification")
+        .setColor('#0099ff')
+        .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
+        .setDescription(`${member.username} was successfully kicked!`)
       if (member) {
         /**
          * Kick the member
