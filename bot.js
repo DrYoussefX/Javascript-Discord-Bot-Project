@@ -28,7 +28,7 @@ client.on("message", message=>{
       // Now we get the member from the user
       const member = message.guild.member(user);
       let kick = new Discord.RichEmbed()
-        //.setAuthor(`${kickedUser.user.username}`, `${kickedUser.user.avatarURL}`)
+        .setAuthor(`${member.user.username}`, `${member.user.avatarURL}`)
         .setTitle("Kick Notification")
         .setColor('#0099ff')
         .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
