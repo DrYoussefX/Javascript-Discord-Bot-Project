@@ -22,11 +22,11 @@ client.on("message", message=>{
 	if(message.content.startsWith(">kick")) {
         let kickedUser = message.mentions.members.first
         let kick = new Discord.RichEmbed()
-        .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+        .setAuthor(`${kickedUser.user.username}`, `${kickedUser.user.avatarURL}`)
         .setTitle("Kick Notification")
         .setColor('#0099ff')
         .setFooter(`Kick done by ${message.author.username} (${message.author.id})`)
-        .setDescription(`${mentionedUser.user.username} was successfully kicked!`)
+        .setDescription(`${kickedUser.user.username} was successfully kicked!`)
         member.kick()
         message.channel.sendEmbed(kick)
     }
