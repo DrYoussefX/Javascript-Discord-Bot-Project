@@ -34,7 +34,7 @@ client.on("message", message=>{
 			  if(!message.member.hasPermission('ADMINISTRATOR')) {
 		 message.channel.send("No sufficient perms")
 	 } else {
-		 if(message.member = mentionedUser) {
+		 if(message.member == mentionedUser) {
 		   var mutedself = new Discord.RichEmbed()
 		   .setTitle("Mute Notification")
 		   .setColor('#0099ff')
@@ -53,7 +53,7 @@ client.on("message", message=>{
 		 
 			
 		    var unmuted = new Discord.RichEmbed()
-	   //.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
+	   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	   .setTitle("Mute Notification")
 	   .setColor('#0099ff')
 	   .setFooter(`Unmute done by ${message.author.username} (${message.author.id})`)
