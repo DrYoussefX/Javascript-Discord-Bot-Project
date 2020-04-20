@@ -45,8 +45,9 @@ client.on("message", message=>{
             // We let the message author know we were able to kick the person
             message.channel.sendEmbed(kick)
           })
-        
+      }
     }
+}
 });
 client.on("message", message=>{
 	
