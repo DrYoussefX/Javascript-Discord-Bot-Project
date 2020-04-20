@@ -23,6 +23,13 @@ client.on("message", message=>{
          if(message.content.startsWith(">unmute")) {
 		  var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
+		  if(message.member = mentionedUser) {
+		   var mutedself = new Discord.RichEmbed()
+		   .setTitle("Mute Notification")
+		   .setColor('#0099ff')
+		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}`);
+		   message.channel.sendEmbed(mutedself)
+	   } else {
          if(!message.member.hasPermission('ADMINISTRATOR')) {
 		 message.channel.send("No sufficient perms")
 	 } else {
@@ -45,10 +52,11 @@ client.on("message", message=>{
 	   //.setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
 	   .setTitle("Mute Notification")
 	   .setColor('#0099ff')
-	   .setFooter(`Unute done by ${message.author.username} (${message.author.id})`)
+	   .setFooter(`Unmute done by ${message.author.username} (${message.author.id})`)
 	   .setDescription(`${mentionedUser.user.username} was successfully unmuted!`)
 	   mentionedUser.removeRole(message.guild.roles.find(c => c.name == "Muted"));
 		 message.channel.sendEmbed(unmuted)
+	   }
 	   }
 	   }
 		 
@@ -63,7 +71,11 @@ client.on("message", message=>{
            var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
 	   if(message.member = mentionedUser) {
-		   message.channel.send("You can't mute yourself")
+		   var mutedself = new Discord.RichEmbed()
+		   .setTitle("Mute Notification")
+		   .setColor('#0099ff')
+		   .setDescription(`You can't mute yourself, ${mentionedUser.user.username}`);
+		   message.channel.sendEmbed(mutedself)
 	   } else {
          if(!message.member.hasPermission('ADMINISTRATOR')) {
 		 message.channel.send("No sufficient perms")
