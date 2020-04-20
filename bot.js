@@ -24,10 +24,17 @@ client.on("message", message=>{
 		 
            var mentionedUser = message.mentions.members.first()
 	   //let reason = args.slice(1).join(' ');
-         
+         if(!message.member.hasPermission('ADMINISTRATOR')) {
+		 message.channel.send("No sufficient perms")
+	 } else {
 	   
 		 if(!mentionedUser) {
-			 message.channel.send("Specify a user!")
+			 var muted3 = new Discord.RichEmbed()
+			 .setTitle("Command: Mute")
+			 .setColor('#0099ff')
+			 .setDescription("Mute a member from texting in text channels!\n **USAGE** :- \n >mute [user] (Mentioned User) \n **Examples** :- >mute @Youssef")
+				 
+			 message.channel.sendEmbed(muted3)
 		 } else {
 	   if (mentionedUser.roles.some(role => role.name === 'Muted')) {
 		   var muted1 = new Discord.RichEmbed()
@@ -44,6 +51,7 @@ client.on("message", message=>{
 	   .setDescription(`${mentionedUser.user.username} was successfully muted!`)
 	   mentionedUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
 		 message.channel.sendEmbed(muted)
+	   }
 	   }
 		 
 	 }
