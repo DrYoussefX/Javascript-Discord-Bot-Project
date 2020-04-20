@@ -38,13 +38,13 @@ client.on("message", message=>{
 		   .setTitle("Unmute Notification")
 		   .setColor('#0099ff')
 		   .setFooter(`Unmute attempt by ${message.author.username} (${message.author.id})`)
-		   .setDescription(`Sorry, ${mentionedUser.user.username}, you lack permissions for this command.`);
+		   .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
 		 message.channel.sendEmbed(noperms)
 	 } else {
 		 if(message.member == mentionedUser) {
 		   var mutedself = new Discord.RichEmbed()
 		   .setAuthor(`${mentionedUser.user.username}`, `${mentionedUser.user.avatarURL}`)
-		   .setTitle("Unute Notification")
+		   .setTitle("Unmute Notification")
 		   .setColor('#0099ff')
 		   .setFooter(`Unmute attempt by ${message.author.username} (${message.author.id})`)
 		   .setDescription(`You can't unmute yourself, ${mentionedUser.user.username}!`);
@@ -99,7 +99,7 @@ client.on("message", message=>{
 		   .setTitle("Mute Notification")
 		   .setColor('#0099ff')
 		   .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
-		   .setDescription(`Sorry, ${mentionedUser.user.username}, you lack permissions for this command.`);
+		   .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
 		 message.channel.sendEmbed(noperms1)
 	 } else {
 	   if(message.member == mentionedUser) {
