@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     await message.delete();
     
     
-    mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Reports?retryWrites=true&w=majority');
+    mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Reports?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true');
     let rUser = message.mentions.members.first();
     if(!rUser) return message.reply("Couldn't find the mentioned member.");
     let rreason = args.slice(1).join(" ");
