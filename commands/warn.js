@@ -1,4 +1,4 @@
-const discord = require("discord.js");
+const Discord = require("discord.js");
 const Report = require("../report.js")
 const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => {
@@ -34,7 +34,7 @@ const report = new Report({
 report.save()
 .then(result => console.log(result))
 .catch(err => console.log(err));
-var embed = new discord.RichEmbed()
+var embed = new Discord.RichEmbed()
     .setTitle("Warn Notification")
     .setDescription(`**Warn successfully logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Warned By :-** ${report.rUsername} (${report.rID})\n **Warned At :-** ${report.time}\n**Warn ID :-**${report.warnID}`)
     .setColor('#0099ff')
