@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     let rUser = message.mentions.members.first();
    // if(!rUser) return message.reply("Couldn't find the mentioned member.");
     let rreason = args.slice(1).join(" ");
-    if(!rreason) return message.reply("Provide a reason")
+    
     let warnsID = Math.floor((Math.random() * 4783) + 10); 
     if(!rUser) {
         var unmute = new Discord.RichEmbed()
@@ -19,6 +19,9 @@ module.exports.run = async (bot, message, args) => {
         .setDescription("Warn a discord member!\n **USAGE** :- \n >warn [user] (Mentioned User) [reason] \n **Examples** :- \n>warn @Youssef Disrespecting staff.")
             
         message.channel.sendEmbed(unmute) 
+    } else {
+        if(!rreason) return message.reply("Provide a reason");
+            
     
 const report = new Report({
     _id: mongoose.Types.ObjectId(),
