@@ -2,12 +2,10 @@ const discord = require("discord.js");
 const Report = require("../report.js")
 const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => {
-    await message.delete();
     
     
     mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Reports?retryWrites=true&w=majority');
     let rUser = message.mentions.members.first();
-   // if(!rUser) return message.reply("Couldn't find the mentioned member.");
     let rreason = args.slice(1).join(" ");
     
     let warnsID = Math.floor((Math.random() * 4783) + 10); 
