@@ -6,10 +6,10 @@ module.exports.run = async (bot, message, args) => {
     //await message.delete();
     
     let aUser = message.mentions.members.first();
-    //if(!aUser) return message.reply("Couldn't find the mentioned member.");
+   // if(!aUser) return message.reply("Couldn't find the mentioned member.");
     let mutetime = args[1]
    
-    if (!mutetime) return message.reply("No time interval found")
+    
     let areason = args.slice(2).join(" ");
     if(!areason) return message.reply("Provide a reason for the mute")
         if(!aUser) {
@@ -39,6 +39,7 @@ module.exports.run = async (bot, message, args) => {
         .setDescription(`You can't unmute yourself, ${aUser.user.username}!`);
         message.channel.sendEmbed(mutedself)
     } else {
+      if (!mutetime) return message.reply("No time interval found")
         if (aUser.roles.some(role => role.name === 'Muted')) {
         var unmute1 = new Discord.RichEmbed()
         .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
