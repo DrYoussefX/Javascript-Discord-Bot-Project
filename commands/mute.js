@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const Action = require("../mute.js");
-const mongoose = require("mongoose");
+//const Action = require("../mute.js");
+//const mongoose = require("mongoose");
 const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
     //await message.delete();
