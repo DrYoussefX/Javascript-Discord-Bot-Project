@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     //await message.delete();
     
     let aUser = message.mentions.members.first();
-    if(!aUser) return message.reply("Couldn't find the mentioned member.");
+    //if(!aUser) return message.reply("Couldn't find the mentioned member.");
     let mutetime = args[1]
    
     if (!mutetime) return message.reply("No time interval found")
