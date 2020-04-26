@@ -11,11 +11,11 @@ module.exports.run = async (bot, message, args) => {
    
     
     let areason = args.slice(2).join(" ");
-    if(!areason) return message.reply("Provide a reason for the mute")
+    
         if(!aUser) {
           var unmute = new Discord.RichEmbed()
           
-          .setTitle("Command: Kute")
+          .setTitle("Command: Mute")
           .setColor('#0099ff')
           .setDescription("Mute a discord member to prevent him from sending messages in text channels!\n **USAGE** :- \n >mute [user] (Mentioned User) [time in seconds] [reason] \n **Examples** :- \n>Mute @Youssef 10s Spamming")
               
@@ -40,6 +40,7 @@ module.exports.run = async (bot, message, args) => {
         message.channel.sendEmbed(mutedself)
     } else {
       if (!mutetime) return message.reply("No time interval found")
+      if(!areason) return message.reply("Provide a reason for the mute")
         if (aUser.roles.some(role => role.name === 'Muted')) {
         var unmute1 = new Discord.RichEmbed()
         .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
