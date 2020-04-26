@@ -42,7 +42,7 @@ var embed = new discord.RichEmbed()
 
 
 
-
+}
 
 module.exports.help = {
 name: "warn"
