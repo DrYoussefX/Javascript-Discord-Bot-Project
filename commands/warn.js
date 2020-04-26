@@ -5,12 +5,20 @@ module.exports.run = async (bot, message, args) => {
     await message.delete();
     
     
-    mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Reports?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true');
+    mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Reports?retryWrites=true&w=majority');
     let rUser = message.mentions.members.first();
     if(!rUser) return message.reply("Couldn't find the mentioned member.");
     let rreason = args.slice(1).join(" ");
     if(!rreason) return message.reply("Provide a reason")
-    let warnsID = Math.floor((Math.random() * 4783) + 10);  
+    let warnsID = Math.floor((Math.random() * 4783) + 10); 
+    if(!rUser) {
+        var unmute = new Discord.RichEmbed()
+        
+        .setTitle("Command: Warn")
+        .setColor('#0099ff')
+        .setDescription("Warn a discord member!\n **USAGE** :- \n >warn [user] (Mentioned User) [reason] \n **Examples** :- \n>warn @Youssef Disrespecting staff.")
+            
+        message.channel.sendEmbed(unmute) 
     
 const report = new Report({
     _id: mongoose.Types.ObjectId(),
