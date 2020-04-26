@@ -66,7 +66,7 @@ module.exports.run = async (bot, message, args) => {
         aUser.removeRole(message.guild.roles.find(c => c.name == "Muted"))
         var embedT = new Discord.RichEmbed()
         .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
-        .setTitle("Unute Notification")
+        .setTitle("Unmute Notification")
     .setColor('#0099ff')
     .setDescription(`**${aUser.user.username}** was unmuted, time interval ended.`)
     message.channel.sendEmbed(embedT)
