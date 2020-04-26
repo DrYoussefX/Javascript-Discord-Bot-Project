@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("Mute Notification")
         .setColor('#0099ff')
         .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
-        .setDescription(`You can't unmute yourself, ${aUser.user.username}!`);
+        .setDescription(`You can't mute yourself, ${aUser.user.username}!`);
         message.channel.sendEmbed(mutedself)
     } else {
       if (!mutetime) return message.reply("No time interval found")
