@@ -3,6 +3,7 @@ const reportSchema = mongoose.Schema({
     _id: String,
     username: String,
     userID: String,
+    Type: String,
     reason: String,
     rUsername: String,
     rID: String,
