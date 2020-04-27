@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
     //await message.delete();
-    mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Reports?retryWrites=true&w=majority');
+    mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Actionss?retryWrites=true&w=majority');
     let aUser = message.mentions.members.first();
     if(!aUser) return message.reply("Couldn't find the mentioned member.");
     let mutetime = args[1]
