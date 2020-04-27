@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         if(!report) return message.channel.send("This ID is not valid.")
         var idembed = new Discord.RichEmbed()
       .setTitle("Warn notification")
-        .setDescription(`**Warns Logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Warned By :-** ${report.rUsername} (${report.rID})\n **Warned At :-** ${report.time}\n**Warn ID :-**${report.warnID}`)
+        .setDescription(`**Infractions Logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Infraction done by :-** ${report.rUsername} (${report.rID})\n **Infraction logged at :-** ${report.time}\n**Infraction ID :-**${report.warnID}`)
           .setColor('#0099ff')
         message.channel.sendEmbed(idembed);
     })
