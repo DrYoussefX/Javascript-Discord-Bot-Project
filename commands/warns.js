@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => {
  
   // perform actions on the collection object
-  mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Reports?retryWrites=true&w=majority');
+  mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Actionss?retryWrites=true&w=majority');
     let rUser = message.mentions.members.first();
     var usersProjection = { 
         _id: false,
