@@ -1,15 +1,15 @@
 const Discord = require("discord.js");
-//const Action = require("../mute.js");
-//const mongoose = require("mongoose");
+const Report = require("../report.js")
+const mongoose = require("mongoose");
 const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
     //await message.delete();
-    
+    mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Reports?retryWrites=true&w=majority');
     let aUser = message.mentions.members.first();
-   // if(!aUser) return message.reply("Couldn't find the mentioned member.");
+    if(!aUser) return message.reply("Couldn't find the mentioned member.");
     let mutetime = args[1]
    
-    
+    let warnsID = Math.floor((Math.random() * 4783) + 10);
     let areason = args.slice(2).join(" ");
     
         if(!aUser) {
@@ -52,7 +52,20 @@ module.exports.run = async (bot, message, args) => {
     } else {
        
      
-      
+      const report = new Report({
+        _id: mongoose.Types.ObjectId(),
+        username: aUser.user.username,
+        userID: aUser.id,
+        Type: "Mute",
+        reason: areason,
+        rUsername: message.author.username,
+        rID: message.author.id,
+        time: message.createdAt,
+        warnID: warnsID
+    });
+    report.save()
+    .then(result => console.log(result))
+    .catch(err => console.log(err));
          
          var unmuted = new Discord.RichEmbed()
     .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
@@ -60,7 +73,13 @@ module.exports.run = async (bot, message, args) => {
     .setColor('#0099ff')
    // .setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
    .setDescription(`**Mute successfully logged for ${aUser.user.username}** (${aUser.user.id})\n**Reason :-** ${areason}\n**Mute Time:-** ${ms(ms(mutetime))}\n**Muted By :-** ${message.author.username} (${message.author.id})\n **Muted At :-** ${message.createdAt}`)
+   var unmutedd = new Discord.RichEmbed()
+   .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
+    .setTitle("Mute Notification")
+    .setColor('#0099ff')
+    .setDescription(`User **${aUser.user.username} was successfully muted for the following reason :- **${areason}`)
     aUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
+    message.channel.sendEmbed(unmutedd)
       aUser.sendEmbed(unmuted)
       setTimeout(function(){
         aUser.removeRole(message.guild.roles.find(c => c.name == "Muted"))
