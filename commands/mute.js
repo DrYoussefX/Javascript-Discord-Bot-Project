@@ -61,15 +61,15 @@ module.exports.run = async (bot, message, args) => {
    // .setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
    .setDescription(`**Mute successfully logged for ${aUser.user.username}** (${aUser.user.id})\n**Reason :-** ${areason}\n**Mute Time:-** ${ms(ms(mutetime))}\n**Muted By :-** ${message.author.username} (${message.author.id})\n **Muted At :-** ${message.createdAt}`)
     aUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
-      message.channel.sendEmbed(unmuted)
+      aUser.sendEmbed(unmuted)
       setTimeout(function(){
         aUser.removeRole(message.guild.roles.find(c => c.name == "Muted"))
         var embedT = new Discord.RichEmbed()
         .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
         .setTitle("Unmute Notification")
     .setColor('#0099ff')
-    .setDescription(`**${aUser.user.username}** was unmuted, time interval ended.`)
-    message.channel.sendEmbed(embedT)
+    .setDescription(`You were unmuted,**${aUser.user.username}**, time interval ended.`)
+    aUser.sendEmbed(embedT)
         //message.channel.send("User was unmuted")
       }, ms(mutetime))
     
