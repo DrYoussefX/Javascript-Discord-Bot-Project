@@ -27,7 +27,7 @@ const report = new Report({
     _id: mongoose.Types.ObjectId(),
     username: rUser.user.username,
     userID: rUser.id,
-    type: "Warn",
+    Type: "Warn",
     reason: rreason,
     rUsername: message.author.username,
     rID: message.author.id,
