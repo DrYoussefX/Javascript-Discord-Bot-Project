@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 const fs = require("fs");
-//const config = require("./config.json");
+const config = require("./config.json");
 const mongoose = require("mongoose");
 const Config = require("./config.js")
 const bot = new discord.Client({disableEveryone: true});
@@ -30,11 +30,21 @@ fs.readdir("./commands/", (err, files) => {
 
 // Message event
 bot.on("message", async message => {
-  Config.findOne({guildID: message.guild.id}, function(err, guild) {
-    if(err) console.log (err)
+  Config.findOne({
+    guildID: id
+}, (err, guild) => {
+    if (err) console.error(err);
+
+    if (!guild) {
+        const newConfig = new Config({
+            guildID: id,
+            prefix: config.prefix
+        });
+
+        return newConfig.save();
+    }
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-
   let prefix = guild.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase();
