@@ -13,6 +13,6 @@ module.exports.run = async (bot, message, args) => {
     .then(result => console.log(result))
     .catch(err => console.log(err));
 }
-module.exports.run = {
+module.exports.help = {
     name: "setprefix"
 }
