@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 const fs = require("fs");
-//const config = require("./config.json");
+/const config = require("./config.json");
 const mongoose = require("mongoose");
 const Config = require("./config.js")
 const bot = new discord.Client({disableEveryone: true});
