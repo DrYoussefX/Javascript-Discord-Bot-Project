@@ -31,13 +31,13 @@ fs.readdir("./commands/", (err, files) => {
 // Message event
 bot.on("message", async message => {
   Config.findOne({
-    guildID: id
+    guildID: message.guild.id
 }, (err, guild) => {
     if (err) console.error(err);
 
     if (!guild) {
         const newConfig = new Config({
-            guildID: id,
+            guildID: message.guild.id,
             prefix: config.prefix
         });
 
