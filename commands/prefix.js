@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => {
     //await message.delete();
     mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
-    let prefix = args[1]
+    let prefix = args[0]
     const config = new Config({
         guildID: message.guild.id,
         prefix: prefix
