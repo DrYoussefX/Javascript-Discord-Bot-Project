@@ -69,7 +69,7 @@ bot.on("message", message => {
   if(message.content.startsWith(">setprefix")) {
   mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
     mongoose.set('useFindAndModify', false);
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(">").trim().split(/ +/g);
     let prefix = args.shift()
     if(!prefix) return message.channel.send("No prefix found")
     Config.findOneAndUpdate({guildID: message.guild.id}, {prefix: prefix}, function(err, config) {
