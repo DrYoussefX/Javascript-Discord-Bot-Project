@@ -66,6 +66,7 @@ if(message.content.startsWith(">prefix")) {
 }
 })
 bot.on("message", message => {
+  if(message.content.startsWith(">setprefix")) {
   mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
     mongoose.set('useFindAndModify', false);
     let prefix = args[0]
@@ -74,5 +75,6 @@ bot.on("message", message => {
         if(err) console.log(err)
         message.channel.send(`Prefix was successfully changed.`)
     })
+  }
 })
 bot.login(process.env.BOT_TOKEN);
