@@ -57,5 +57,13 @@ bot.on("message", async message => {
   
   })
 })
+bot.on("message", message => {
+if(message.startsWith(">prefix")) {
+ mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
+ Config.findOne({guildID: message.guild.id}, function(err, config) {
+ message.channel.send(`Your server prefix is **${config.prefix}**`);
+ })
+}
+})
 
 bot.login(process.env.BOT_TOKEN);
