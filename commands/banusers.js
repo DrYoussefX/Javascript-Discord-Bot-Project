@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
     let member = message.mentions.members.first()
-    member.ban({days: 10})
+    member.ban()
     .then(console.log)
     .catch(console.error)
 }
