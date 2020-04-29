@@ -7,8 +7,8 @@ const bot = new discord.Client({disableEveryone: true});
 
 // When bot ready
 bot.on("ready", async () => {
-  var channel = bot.channels.get('my-unique-channel-id');
-  channel.send("درك بيمسي عليكم")
+ // var channel = bot.channels.get('my-unique-channel-id');
+ // channel.send("درك بيمسي عليكم")
   mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
   console.log(`${bot.user.username} is ready for action!`);
   bot.user.setActivity("ya 5wlat ya klab");
