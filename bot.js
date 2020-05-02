@@ -79,4 +79,14 @@ bot.on("message", message => {
     })
   }
 })
+bot.on('messageReactionAdd', (reaction, user) => {
+  if (message.channel.name === 'verification') {
+    if (reaction.emoji.name === "reminder_ribbon") {
+      const guildMember = reaction.message.guild.members.get(user.id);
+      
+      guildMember.addRole(message.guild.roles.find(c => c.name == "Verified"));
+      guildMember.sendMessage(`You were successfully verified at **${reaction.guild}`)
+    }
+  }
+});
 bot.login(process.env.BOT_TOKEN);
