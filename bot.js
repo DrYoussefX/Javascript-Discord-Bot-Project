@@ -80,7 +80,7 @@ bot.on("message", message => {
   }
 })
 bot.on('messageReactionAdd', (reaction, user) => {
-  if (message.channel.name === 'verification') {
+  if (guild.channel.id === '706276415837831242') {
     if (reaction.emoji.name === "reminder_ribbon") {
       const guildMember = reaction.message.guild.members.get(user.id);
       
