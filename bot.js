@@ -79,21 +79,11 @@ bot.on("message", message => {
     })
   }
 })
-bot.on("messageReactionAdd", (reaction, user) => {
-  if(reaction.emoji.id == ":reminder_ribbon:" && reaction.message.id === '706276415837831242') 
-      {
-          guild.fetchMember(user) // fetch the user that reacted
-              .then((member) => 
-              {
-                  let role = (member.guild.roles.find(role => role.name === "Verified"));
-                  member.addRole(role)
-                  .then(() => 
-                  {
-                      console.log(`Added the role to ${member.displayName}`);
-                 
-                  })
-                })
-              }
-            })
+bot.on('guildMemberAdd', member => {
+  member.guild.channels.get('706280557033553980').send(`${bot.user.username} has just joined the server, would you like to verify him?`);
+  message.react("👍")
+  message.react("👎") 
+  
+});
 
 bot.login(process.env.BOT_TOKEN);
