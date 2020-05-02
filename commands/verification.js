@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const bot = new discord.Client({disableEveryone: true});
+const bot = new Discord.Client({disableEveryone: true});
 
 
 module.exports.run = async (bot, message, args) => {
