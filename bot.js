@@ -79,14 +79,20 @@ bot.on("message", message => {
     })
   }
 })
-bot.on('messageReactionAdd', (reaction, user) => {
-  if (guild.channel.id === '706276415837831242') {
-    if (reaction.emoji.name === "reminder_ribbon") {
-      const guildMember = reaction.message.guild.members.get(user.id);
-      
-      guildMember.addRole(message.guild.roles.find(c => c.name == "Verified"));
-      guildMember.sendMessage(`You were successfully verified at **${reaction.guild}`)
-    }
-  }
-});
+client.on("messageReactionAdd", (reaction, user) => {
+    if(reaction.emoji.id == ":reminder_ribbon:" && reaction.message.id === '706276415837831242') 
+        {
+            guild.fetchMember(user) // fetch the user that reacted
+                .then((member) => 
+                {
+                    let role = (member.guild.roles.find(role => role.name === "Verified"));
+                    member.addRole(role)
+                    .then(() => 
+                    {
+                        console.log(`Added the role to ${member.displayName}`);
+                    }
+                    );
+                });
+        }
+}
 bot.login(process.env.BOT_TOKEN);
