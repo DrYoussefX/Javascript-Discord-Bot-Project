@@ -7,6 +7,11 @@ module.exports.run = async (bot, message, args) => {
     let msg = await message.guild.channels.get('706280557033553980').send(`User ${message.author.username} has requested verification. Would you like to verify him?`)
     
     msg.react("👍")
+    bot.on('messageReactionAdd', (reaction, user) => {
+        if(reaction.emoji.name === "👍") {
+        console.log(reaction.users);
+    }
+})
 }
 module.exports.help = {
     name: "verify"
