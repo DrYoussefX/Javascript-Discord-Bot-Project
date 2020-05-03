@@ -10,7 +10,8 @@ module.exports.run = async (bot, message, args) => {
     bot.on('messageReactionAdd', (reaction, user) => {
         if(reaction.emoji.name === "👍") {
         console.log(reaction.users);
-        if(reaction.user.username !== "704840746540466238") return message.channel.send("Not allowed to verify users")
+        if(reaction.users.username !== "704840746540466238") return message.channel.send("Not allowed to verify users")
+            if(reaction.users.username == "704840746540466238") return message.channel.send("Verified") 
     }
 })
 }
