@@ -6,6 +6,7 @@ let gayEmbed = new Discord.RichEmbed()
 .setTitle("Gayness Rate")
 .setFooter(`Requested by ${message.author.username} || Bot programmed by :- DRDERY`)
 .setDescription(`${message.author.username} is ${gayness}% gay :gay_pride_flag:`)
+message.channel.sendEmbed(gayEmbed)
 }
 module.exports.help = {
     name: "gay"
