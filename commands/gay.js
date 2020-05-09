@@ -8,5 +8,5 @@ let gayEmbed = new Discord.RichEmbed()
 .setDescription(`${message.author.username} is ${gayness}% gay :gay_pride_flag:`)
 }
 module.exports.help = {
-    name: gay
+    name: "gay"
 }
