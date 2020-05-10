@@ -11,6 +11,15 @@ module.exports.run = async (bot, message, args) => {
     let rreason = args.slice(1).join(" ");
     
     let warnsID = Math.floor((Math.random() * 4783) + 10); 
+    if(!message.member.hasPermission('ADMINISTRATOR')) {
+        var noperms = new Discord.RichEmbed()
+.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
+ .setTitle("Logged Infractions")
+ .setColor('#9400D3')
+ //.setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
+ .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
+message.channel.sendEmbed(noperms)
+      } else {
     if(!rUser) {
         var unmute = new Discord.RichEmbed()
         
@@ -39,14 +48,14 @@ const report = new Report({
 report.save()
 .then(result => console.log(result))
 .catch(err => console.log(err));
-var embed = new discord.RichEmbed()
+var embed = new Discord.RichEmbed()
     .setTitle("Warn Notification")
     .setDescription(`**Warn successfully logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Warned By :-** ${report.rUsername} (${report.rID})\n **Warned At :-** ${report.time}\n**Warn ID :-**${report.warnID}`)
     .setColor('#9400D3')
     message.channel.sendEmbed(embed)
 }
 
-
+      }
 
 }
 
