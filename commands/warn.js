@@ -2,7 +2,6 @@ const discord = require("discord.js");
 const Report = require("../report.js")
 const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => {
-    await message.delete();
     
     
     mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Actionss?retryWrites=true&w=majority');
@@ -12,7 +11,6 @@ module.exports.run = async (bot, message, args) => {
     
     let warnsID = Math.floor((Math.random() * 4783) + 10); 
     if(!rUser) {
-        if(!rreason) {
         var unmute = new Discord.RichEmbed()
         
         .setTitle("Command: Warn")
@@ -20,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         .setDescription("Warn a discord member!\n **USAGE** :- \n >warn [user] (Mentioned User) [reason] \n **Examples** :- \n>warn @Youssef Disrespecting staff.")
             
         message.channel.sendEmbed(unmute) 
-        }
+        
     } else {
         if(!rreason) return message.reply("Provide a reason");
             
@@ -41,7 +39,7 @@ report.save()
 .catch(err => console.log(err));
 var embed = new discord.RichEmbed()
     .setTitle("Warn Notification")
-    .setDescription(`**Warn successfully logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Warned By :-** ${report.rUsername} (${report.rID})\n **Warned At :-** ${report.time}\n**Infraction ID :-**${report.warnID}`)
+    .setDescription(`**Warn successfully logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Warned By :-** ${report.rUsername} (${report.rID})\n **Warned At :-** ${report.time}\n**Warn ID :-**${report.warnID}`)
     .setColor('#0099ff')
     message.channel.sendEmbed(embed)
 }
