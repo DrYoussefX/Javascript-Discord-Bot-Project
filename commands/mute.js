@@ -62,6 +62,7 @@ message.channel.sendEmbed(noperms)
         rUsername: message.author.username,
         rID: message.author.id,
         time: message.createdAt,
+          guild: message.guild.id,
         warnID: warnsID
     });
     report.save()
