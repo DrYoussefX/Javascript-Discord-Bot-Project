@@ -11,6 +11,15 @@ module.exports.run = async (bot, message, args) => {
    
     let warnsID = Math.floor((Math.random() * 4783) + 10);
     let areason = args.slice(2).join(" ");
+    if(!message.member.hasPermission('ADMINISTRATOR')) {
+      var noperms = new Discord.RichEmbed()
+.setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
+.setTitle("Mute Notification")
+.setColor('#9400D3')
+.setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
+.setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
+message.channel.sendEmbed(noperms)
+} else {
     
         if(!aUser) {
           var unmute = new Discord.RichEmbed()
@@ -21,15 +30,7 @@ module.exports.run = async (bot, message, args) => {
               
           message.channel.sendEmbed(unmute)
       } else {
-           if(!message.member.hasPermission('ADMINISTRATOR')) {
-               var noperms = new Discord.RichEmbed()
-     .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
-        .setTitle("Mute Notification")
-        .setColor('#9400D3')
-        .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
-        .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
-      message.channel.sendEmbed(noperms)
-  } else {
+        
       if(message.member == aUser) {
         var mutedself = new Discord.RichEmbed()
         .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
