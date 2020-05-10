@@ -13,8 +13,8 @@ module.exports.run = async (bot, message, args) => {
     let areason = args.slice(2).join(" ");
     if(!message.member.hasPermission('ADMINISTRATOR')) {
       var noperms = new Discord.RichEmbed()
-//.setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
-.setTitle("Mute Notification")
+.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
+.setTitle("Command: Mute")
 .setColor('#9400D3')
 .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
 .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
@@ -34,7 +34,7 @@ message.channel.sendEmbed(noperms)
       if(message.member == aUser) {
         var mutedself = new Discord.RichEmbed()
         .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
-        .setTitle("Mute Notification")
+        .setTitle("Command: Mute")
         .setColor('#9400D3')
         .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
         .setDescription(`You can't mute yourself, ${aUser.user.username}!`);
@@ -46,7 +46,7 @@ message.channel.sendEmbed(noperms)
         var unmute1 = new Discord.RichEmbed()
         .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
  .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
-    .setTitle("Mute Notification")
+    .setTitle("Command: Mute")
     .setColor('#9400D3')
     .setDescription(`User ${aUser.user.username}  is already muted!`);
        message.channel.sendEmbed(unmute1);
@@ -70,13 +70,13 @@ message.channel.sendEmbed(noperms)
          
          var unmuted = new Discord.RichEmbed()
     .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
-    .setTitle("Mute Notification")
+    .setTitle("Command: Mute")
     .setColor('#9400D3')
    // .setFooter(`Mute done by ${message.author.username} (${message.author.id})`)
    .setDescription(`**Mute successfully logged for ${aUser.user.username}** (${aUser.user.id})\n**Reason :-** ${areason}\n**Mute Time:-** ${ms(ms(mutetime))}\n**Muted By :-** ${message.author.username} (${message.author.id})\n **Muted At :-** ${message.createdAt}`)
    var unmutedd = new Discord.RichEmbed()
    .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
-    .setTitle("Mute Notification")
+    .setTitle("Command: Mute")
     .setColor('#9400D3')
     .setDescription(`User **${aUser.user.username} was successfully muted for the following reason :- **${areason}`)
     aUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
