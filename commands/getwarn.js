@@ -6,13 +6,23 @@ module.exports.run = async (bot, message, args) => {
     //let rUser = message.mentions.members.first();
     let id = args[0]
     Report.findOne({warnID: id}, function(err, report) {
+      if(!message.member.hasPermission('ADMINISTRATOR')) {
+        var noperms = new Discord.RichEmbed()
+.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
+ .setTitle("Logged Infractions")
+ .setColor('#9400D3')
+ //.setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
+ .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
+message.channel.sendEmbed(noperms)
+      } else {
         if(!report) return message.channel.send("This ID is not valid.")
         var idembed = new Discord.RichEmbed()
       .setTitle("Warn notification")
         .setDescription(`**Infractions Logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Infraction done by :-** ${report.rUsername} (${report.rID})\n **Infraction logged at :-** ${report.time}\n**Infraction ID :-**${report.warnID}`)
-          .setColor('#0099ff')
+          .setColor('#9400D3')
         message.channel.sendEmbed(idembed);
-    })
+    }
+  })
 }
 
 module.exports.help = {
