@@ -1,4 +1,4 @@
-const discord = require("discord.js");
+const Discord = require("discord.js");
 const Report = require("../report.js")
 const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => {
