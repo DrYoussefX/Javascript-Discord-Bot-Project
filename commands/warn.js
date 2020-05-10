@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const Report = require("../report.js")
 const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => {
+    await message.delete();
     
     
     mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Actionss?retryWrites=true&w=majority');
@@ -14,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         var unmute = new Discord.RichEmbed()
         
         .setTitle("Command: Warn")
-        .setColor('#0099ff')
+        .setColor('#9400D3')
         .setDescription("Warn a discord member!\n **USAGE** :- \n >warn [user] (Mentioned User) [reason] \n **Examples** :- \n>warn @Youssef Disrespecting staff.")
             
         message.channel.sendEmbed(unmute) 
@@ -40,7 +41,7 @@ report.save()
 var embed = new discord.RichEmbed()
     .setTitle("Warn Notification")
     .setDescription(`**Warn successfully logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Warned By :-** ${report.rUsername} (${report.rID})\n **Warned At :-** ${report.time}\n**Warn ID :-**${report.warnID}`)
-    .setColor('#0099ff')
+    .setColor('#9400D3')
     message.channel.sendEmbed(embed)
 }
 
