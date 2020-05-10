@@ -7,13 +7,6 @@ const bot = new discord.Client({disableEveryone: true});
 
 // When bot ready
 bot.on("ready", async () => {
-  var channel = bot.channels.get('488369199593422879');
-  let update = new discord.RichEmbed()
-  .setTitle("Update Notification")
-  .setFooter(`New update released by Drdery.`)
-.setDescription(`-Added color for **gay** command.\n-Added new feature for **gay** command, where you can check whether others are gay or not!\n-Fixed **gay** command bug, giving numbers above 100%.`)
-.setColor("#9400D3")
- channel.sendEmbed(update)
   mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
   console.log(`${bot.user.username} is ready for action!`);
   bot.user.setActivity(">help || ST. Prefix >");
