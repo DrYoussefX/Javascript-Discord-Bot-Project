@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     let areason = args.slice(2).join(" ");
     if(!message.member.hasPermission('ADMINISTRATOR')) {
       var noperms = new Discord.RichEmbed()
-.setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
+//.setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
 .setTitle("Mute Notification")
 .setColor('#9400D3')
 .setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
