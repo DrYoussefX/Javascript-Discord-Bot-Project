@@ -79,11 +79,4 @@ bot.on("message", message => {
     })
   }
 })
-bot.on('guildMemberAdd', member => {
-  member.guild.channels.get('706280557033553980').send(`${bot.user.username} has just joined the server, would you like to verify him?`);
-  message.react("👍")
-  message.react("👎") 
-  
-});
-
 bot.login(process.env.BOT_TOKEN);
