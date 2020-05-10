@@ -1,3 +1,38 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@Jesse541 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+Jesse541
+/
+awebto
+forked from Awebdo/awebto
+0
+02
+ Code
+ Pull requests 0 Actions
+ Projects 0
+ Wiki
+ Security 0
+ Insights
+ Settings
+awebto/bot.js /
+@Jesse541 Jesse541 Update bot.js
+62f9dfa 9 minutes ago
+@Awebdo@Jesse541
+82 lines (72 sloc)  2.85 KB
+  
+Code navigation is available!
+Navigate your code with ease. Click on function and method calls to jump to their definitions or references in the same repository. Learn more
+
 const discord = require("discord.js");
 const fs = require("fs");
 const config = require("./config.json");
@@ -7,11 +42,11 @@ const bot = new discord.Client({disableEveryone: true});
 
 // When bot ready
 bot.on("ready", async () => {
- // var channel = bot.channels.get('my-unique-channel-id');
- // channel.send("درك بيمسي عليكم")
+  var channel = bot.channels.get('488369199593422879');
+ channel.send("درك بيمسي عليكم")
   mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
   console.log(`${bot.user.username} is ready for action!`);
-  bot.user.setActivity(">help || ST. Prefix ">"");
+  bot.user.setActivity(">help || ST. Prefix >");
 });
 
 // Load commands
