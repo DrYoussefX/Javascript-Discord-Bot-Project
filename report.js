@@ -8,6 +8,7 @@ const reportSchema = mongoose.Schema({
     rUsername: String,
     rID: String,
     time: String,
+    guild: String,
     warnID: String
 });
 module.exports = mongoose.model("Report", reportSchema)
