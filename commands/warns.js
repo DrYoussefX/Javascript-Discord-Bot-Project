@@ -22,23 +22,31 @@ module.exports.run = async (bot, message, args) => {
           userMap[report._id] = report.username;
         });
         //console.log(report)
-       
+        if(!message.member.hasPermission('ADMINISTRATOR')) {
+          var noperms = new Discord.RichEmbed()
+.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
+   .setTitle("Logged Infractions")
+   .setColor('#0099ff')
+   //.setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
+   .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
+ message.channel.sendEmbed(noperms)
+        } else {
         if(!report) {
            let noReport = new Discord.RichEmbed()
-            .setTitle("Warn notification")
-          .setDescription(`No warns logged for ${rUser.user.username}.`)
-           .setColor('#0099ff')
+            .setTitle("Logged Infractions")
+          .setDescription(`No infractions logged for ${rUser.user.username}.`)
+           .setColor('#9400D3')
             message.channel.sendEmbed(noReport)
         } else if(report) {
           let foundReport = new Discord.RichEmbed()
-            .setTitle("Warn notification")
+            .setTitle("Logged Infractions")
            .setDescription(report)
-            .setColor('#0099ff')
+            .setColor('#9400D3')
         message.channel.sendEmbed(foundReport)
         }
-        
-            })
-        }
+      }
+    })
+  }
 module.exports.help = {
     name: "infr"
 }
