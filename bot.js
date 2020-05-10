@@ -11,7 +11,7 @@ bot.on("ready", async () => {
  // channel.send("درك بيمسي عليكم")
   mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
   console.log(`${bot.user.username} is ready for action!`);
-  bot.user.setActivity("ya 5wlat ya klab");
+  bot.user.setActivity(">help || ST. Prefix ">"");
 });
 
 // Load commands
