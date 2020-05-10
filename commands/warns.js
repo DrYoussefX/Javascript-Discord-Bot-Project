@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         __v: false,
         username: false
     };
-    Report.find({username: rUser.user.username, guild: message.guild.id}, , usersProjection, function(err, report) {
+    Report.find({username: rUser.user.username, guild: message.guild.id}, usersProjection, function(err, report) {
         var userMap = {};
     
         report.forEach(function(report) {
