@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     //await message.delete();
     mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Actionss?retryWrites=true&w=majority');
     let aUser = message.mentions.members.first();
-    if(!aUser) return message.reply("Couldn't find the mentioned member.");
+   // if(!aUser) return message.reply("Couldn't find the mentioned member.");
     let mutetime = args[1]
    
     let warnsID = Math.floor((Math.random() * 4783) + 10);
