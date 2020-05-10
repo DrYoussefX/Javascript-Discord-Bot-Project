@@ -65,16 +65,16 @@ if(message.content.startsWith(">prefix")) {
  })
 }
 })
-bot.on("message", message => {
-  if(message.content.startsWith(">setprefix")) {
-  mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
-    mongoose.set('useFindAndModify', false);
-    let prefix = message.content.slice(">setprefix").trim().split(/ +/g);
-    if(!prefix) return message.channel.send("No prefix found")
-    Config.findOneAndUpdate({guildID: message.guild.id}, {prefix: prefix}, function(err, config) {
-        if(err) console.log(err)
-        message.channel.send(`Prefix was successfully changed.`)
-    })
-  }
-})
+//bot.on("message", message => {
+  //if(message.content.startsWith(">setprefix")) {
+  //mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
+   // mongoose.set('useFindAndModify', false);
+  //  let prefix = message.content.slice(">setprefix").trim().split(/ +/g);
+   // if(!prefix) return message.channel.send("No prefix found")
+   // Config.findOneAndUpdate({guildID: message.guild.id}, {prefix: prefix}, function(err, config) {
+   //     if(err) console.log(err)
+     //   message.channel.send(`Prefix was successfully changed.`)
+    //})
+//  }
+//})
 bot.login(process.env.BOT_TOKEN);
