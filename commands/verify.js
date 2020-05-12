@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 let verifyno = Math.floor((Math.random() * 5000) + 100);
-message.channel.send(`Type the verification code :- **${verifyno}**, you have`)
+    if (message.member.roles.some(role => role.name === 'Muted')) return message.channel.send("You're already verified.")
+message.channel.send(`Type the verification code :- **${verifyno}**.`)
 const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
 console.log(collector)
 collector.on('collect', message => {
