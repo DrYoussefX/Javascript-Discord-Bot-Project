@@ -9,15 +9,17 @@ console.log(collector)
 collector.on('collect', message => {            
     if(message.content == verifyno) {
     message.channel.send(`You've succesfully passed the first stage of verification. Your request must be accepted by server admins.`)
-   // message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
+   // 
    const filter = (reaction, user) => reaction.emoji.name === '👍' && user.id === '546316934187057163'
    let channel = bot.channels.get("709775175331217519")
    channel.send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`).then(sentmsg => {
    sentmsg.react("👍")
    sentmsg.react("👎")
    sentmsg.awaitReactions(filter, { time: 15000 })
-.then(collected => console.log(`Collected ${collected.size} reactions`))
-.catch(console.error);
+.then(collected => {
+    channel.send(`${message.author.username} was given the **Verified** role.`)
+    message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
+})
    })
       
         } else {
