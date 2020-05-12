@@ -15,7 +15,7 @@ collector.on('collect', message => {
                 message.channel.send(`You've succesfully passed the first stage of verification. Your request must be accepted by server admins.`)
                // message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
                bot.channels.get("709775175331217519").send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`)
-               collector.on('collect', msg => {
+               collector1.on('collect', msg => {
                    if(msg.content == "y") {
                     message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
                     message.channel.send("Your request was successfully verified.")
