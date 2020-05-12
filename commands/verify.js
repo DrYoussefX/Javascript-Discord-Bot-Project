@@ -22,7 +22,13 @@ collector.on('collect', message => {
     message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
     sentmsg.delete(1000)
 })
-   })
+const filter1 = (reaction, user) => reaction.emoji.name === '👎' && user.id === '546316934187057163'   
+sentmsg.awaitReactions(filter, { time : 15000 })
+.then(collected => {
+    channel.send(`${message.author.username}'s verification request was rejected`)
+    sentmsg.delete(1000)
+})
+})
       
         } else {
             if(message.contet !== verifyno) {
