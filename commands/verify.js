@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const bot = new discord.Client({disableEveryone: true});
+const bot = new Discord.Client({disableEveryone: true});
 module.exports.run = async (bot, message, args) => {
 let verifyno = Math.floor((Math.random() * 5000) + 100);
     if (message.member.roles.some(role => role.name === 'Verified')) return message.channel.send("You're already verified.")
