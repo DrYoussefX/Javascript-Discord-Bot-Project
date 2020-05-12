@@ -27,6 +27,7 @@ sentmsg.awaitReactions(filter1, { time : 15000 })
 .then(collected => {
     channel.send(`**${message.author.username}**'s verification request was rejected`)
     sentmsg.delete(1000)
+    message.member.removeRole(message.guild.roles.find(c => c.name == "Muted"))
 })
 })
       
