@@ -6,22 +6,23 @@ let verifyno = Math.floor((Math.random() * 5000) + 100);
 message.channel.send(`Type the verification code :- **${verifyno}** .`)
 const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
 console.log(collector)
-collector.on('collect', message => {
-        if(message.contet !== verifyno) {
-            message.channel.send("You entered a wrong verification code.")
+collector.on('collect', message => {            if(message.content == verifyno) {
+    message.channel.send(`You've succesfully passed the first stage of verification. Your request must be accepted by server admins.`)
+   // message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
+   const filter = (reaction, user) => reaction.emoji.name === '👌' && user.id === '546316934187057163'
+   let msg = bot.channels.get("709775175331217519")
+   msg.send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`)
+   msg.react("👍")
+   msg.react("👎")
+   msg.awaitReactions(filter, { time: 15000 })
+.then(collected => console.log(`Collected ${collected.size} reactions`))
+.catch(console.error);
+
+        
         } else {
-            if(message.content == verifyno) {
-                message.channel.send(`You've succesfully passed the first stage of verification. Your request must be accepted by server admins.`)
-               // message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
-               const filter = (reaction, user) => reaction.emoji.name === '👌' && user.id === '546316934187057163'
-               let msg = bot.channels.get("709775175331217519")
-               msg.send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`)
-               msg.react("👍")
-               msg.react("👎")
-               msg.awaitReactions(filter, { time: 15000 })
-  .then(collected => console.log(`Collected ${collected.size} reactions`))
-  .catch(console.error);
-        }
+            if(message.contet !== verifyno) {
+                message.channel.send("You entered a wrong verification code.")
+   }
     }
     })
 }
