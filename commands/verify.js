@@ -12,9 +12,9 @@ collector.on('collect', message => {            if(message.content == verifyno) 
    const filter = (reaction, user) => reaction.emoji.name === '👌' && user.id === '546316934187057163'
    let msg = bot.channels.get("709775175331217519")
    msg.send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`)
-   msg.react("👍")
-   msg.react("👎")
-   msg.awaitReactions(filter, { time: 15000 })
+   .react("👍")
+   .react("👎")
+   .awaitReactions(filter, { time: 15000 })
 .then(collected => console.log(`Collected ${collected.size} reactions`))
 .catch(console.error);
 
