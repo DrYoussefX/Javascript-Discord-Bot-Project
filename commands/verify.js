@@ -7,7 +7,6 @@ message.channel.send(`Type the verification code :- **${verifyno}** .`)
 const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
 console.log(collector)
 collector.on('collect', message => {
-    const collector = new Discord.MessageCollector();
         if(message.contet !== verifyno) {
             message.channel.send("You entered a wrong verification code.")
         } else {
