@@ -7,22 +7,21 @@ message.channel.send(`Type the verification code :- **${verifyno}** .`)
 const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
 console.log(collector)
 collector.on('collect', message => {
-    const collector1 = new Discord.MessageCollector();
+    const collector = new Discord.MessageCollector();
         if(message.contet !== verifyno) {
             message.channel.send("You entered a wrong verification code.")
         } else {
             if(message.content == verifyno) {
                 message.channel.send(`You've succesfully passed the first stage of verification. Your request must be accepted by server admins.`)
                // message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
-               bot.channels.get("709775175331217519").send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`)
-               collector1.on('collect', msg => {
-                   if(msg.content == "y") {
-                    message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
-                    message.channel.send("Your request was successfully verified.")
-
-                   }
-               })
-                    
+               const filter = (reaction, user) => reaction.emoji.name === '👌' && user.id === '546316934187057163'
+               let msg = bot.channels.get("709775175331217519")
+               msg.send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`)
+               msg.react("👍")
+               msg.react("👎")
+               msg.awaitReactions(filter, { time: 15000 })
+  .then(collected => console.log(`Collected ${collected.size} reactions`))
+  .catch(console.error);
         }
     }
     })
