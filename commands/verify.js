@@ -23,9 +23,9 @@ collector.on('collect', message => {
     sentmsg.delete(1000)
 })
 const filter1 = (reaction, user) => reaction.emoji.name === '👎' && user.id === '546316934187057163'   
-sentmsg.awaitReactions(filter, { time : 15000 })
+sentmsg.awaitReactions(filter1, { time : 15000 })
 .then(collected => {
-    channel.send(`${message.author.username}'s verification request was rejected`)
+    channel.send(`**${message.author.username}**'s verification request was rejected`)
     sentmsg.delete(1000)
 })
 })
