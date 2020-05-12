@@ -11,8 +11,8 @@ collector.on('collect', message => {
     message.channel.send(`You've succesfully passed the first stage of verification. Your request must be accepted by server admins.`)
    // message.member.addRole(message.guild.roles.find(c => c.name == "Verified"));
    const filter = (reaction, user) => reaction.emoji.name === '👍' && user.id === '546316934187057163'
-   let msg = bot.channels.get("709775175331217519").then(sentmsg => {
-   msg.send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`)
+   let channel = bot.channels.get("709775175331217519")
+   channel.send(`User ${message.author.username} has request verification, would you like to verify him? (y/n)`).then(sentmsg => {
    sentmsg.react("👍")
    sentmsg.react("👎")
    sentmsg.awaitReactions(filter, { time: 15000 })
