@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
-    let verified = message.mentions.members.first()
+    //let verified = message.mentions.members.first()
 let verifyno = Math.floor((Math.random() * 5000) + 100);
 message.channel.send(`Type the verification code :- **${verifyno}, you have`)
-const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 60 });
+const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
 console.log(collector)
 collector.on('collect', message => {
     if(message.content === verifyno) {
