@@ -8,14 +8,16 @@ console.log(collector)
 collector.on('collect', message => {
     if(message.content === "y") {
     message.channel.send(`Alright, you have 20 seconds to type the follwoing number :- **${verifyno}**.`)
-    if(message.content === verifyno) {
-    message.channel.send("You were successfully verified.")
-    }
     } else {
         if(message.content === "n") {
             message.channel.send(`Alright, as you wish.`)
         }
     }
+    collector.on('collect', message => {
+        if(message.content === verifyno) {
+            message.channel.send("Alright, you were successfully verified.")
+        }
+    })
 })
 }
 module.exports.help = {
