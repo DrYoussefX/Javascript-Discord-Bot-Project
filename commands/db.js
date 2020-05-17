@@ -1,8 +1,8 @@
 const discord = require("discord.js");
 const bot = new discord.Client({disableEveryone: true});
-const sqlite3 = require("sqlite3").verbose()
+const sqlite = require("sqlite").verbose()
 module.exports.run = async (bot, message, args) => {
-  let db = new sqlite3.Database('./commands/Accounts.db');
+  let db = new sqlite.Database('./commands/Accounts.db');
  let accountname = args.slice(">stats").join("")
   let sql = `SELECT * FROM Accounts WHERE AccountName = "${accountname}"`;
   
