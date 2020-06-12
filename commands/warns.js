@@ -20,7 +20,7 @@ module.exports.run = async(bot, message, args) => {
     
         report.forEach(function(report) {
           userMap[report._id] = report.username;
-         
+         report.toObject()
         });
         //console.log(report)
         if(!message.member.hasPermission('ADMINISTRATOR')) {
