@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const Report = require("../report.js")
 const mongoose = require("mongoose");
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async(bot, message, args) => {
  
   // perform actions on the collection object
   mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Actionss?retryWrites=true&w=majority');
@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
        //    .setDescription(report)
           //  .setColor('#9400D3')
      //   let found = foundReport.content.replace("warnID", "Warn ID")
-        const msgf = message.channel.send(report)
+        const msgf = await message.channel.send(report)
         msgf.edit(msgf.content.replace("warnID", "Warn ID"))
         
          
