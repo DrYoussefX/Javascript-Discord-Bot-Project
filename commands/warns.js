@@ -45,7 +45,7 @@ module.exports.run = async(bot, message, args) => {
           //  .setColor('#9400D3')
      //   let found = foundReport.content.replace("warnID", "Warn ID")
          
-        message.channel.send(report.toObject())
+        message.channel.send(report)
                       
         
         
