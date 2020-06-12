@@ -45,7 +45,7 @@ module.exports.run = async(bot, message, args) => {
      //   let found = foundReport.content.replace("warnID", "Warn ID")
         message.channel.send(report).then((msgf) => {
                                           msgf.edit(msgf.content.replace("warnID", "Warn ID"))
-                                          )}
+                                          })
         
         
          
