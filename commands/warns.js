@@ -15,13 +15,14 @@ module.exports.run = async(bot, message, args) => {
         __v: false,
         username: false
     };
-    Report.find({username: rUser.user.username}, usersProjection).lean(), function(err, report) {
+    Report.find({username: rUser.user.username}, usersProjection).lean().exec(function(err, report) {
         var userMap = {};
     
         report.forEach(function(report) {
           userMap[report._id] = report.username;
         
         });
+     )
         //console.log(report)
         if(!message.member.hasPermission('ADMINISTRATOR')) {
           var noperms = new Discord.RichEmbed()
