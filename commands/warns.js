@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Logged Infractions")
            .setDescription(report)
             .setColor('#9400D3')
-        message.channel.sendEmbed(foundReport).then((sentMessage) => sentMessage.edit(sentMessage.replace("warnID", "Warn ID")))
+        message.channel.sendEmbed(foundReport).then((sentMessage) => sentMessage.edit(sentMessage.content.replace("warnID", "Warn ID")))
       
         }
       }
