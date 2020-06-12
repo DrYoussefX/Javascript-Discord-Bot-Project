@@ -38,12 +38,14 @@ module.exports.run = async (bot, message, args) => {
            .setColor('#9400D3')
             message.channel.sendEmbed(noReport)
         } else if(report) {
-          let foundReport = new Discord.RichEmbed()
-            .setTitle("Logged Infractions")
-           .setDescription(report)
-            .setColor('#9400D3')
-        let found = foundReport.content.replace("warnID", "Warn ID")
-         message.channel.sendEmbed(found)
+        //  let foundReport = new Discord.RichEmbed()
+           // .setTitle("Logged Infractions")
+       //    .setDescription(report)
+          //  .setColor('#9400D3')
+     //   let found = foundReport.content.replace("warnID", "Warn ID")
+        const msgf = await message.channel.send(report)
+        msgf.edit(msgf.content.replace("warnID", "Warn ID"))
+        
          
       
         }
