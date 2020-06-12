@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
    .setColor('#9400D3')
    //.setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
    .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
- message.channel.sendEmbed(noperms).then((sentMessage) => sentMessage.edit(sentMessage.replace("warnID", "Warn ID")))
+ message.channel.sendEmbed(noperms)
         } else {
         if(!report) {
            let noReport = new Discord.RichEmbed()
@@ -42,7 +42,8 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Logged Infractions")
            .setDescription(report)
             .setColor('#9400D3')
-        message.channel.sendEmbed(foundReport)
+        message.channel.sendEmbed(foundReport).then((sentMessage) => sentMessage.edit(sentMessage.replace("warnID", "Warn ID")))
+      
         }
       }
     })
