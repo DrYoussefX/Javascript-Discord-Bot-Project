@@ -15,7 +15,7 @@ module.exports.run = async(bot, message, args) => {
         __v: false,
         username: false
     };
-    Report.aggregate({username: rUser.user.username}, usersProjection, function(err, report) {
+    Report.aggregate([{ $match {username: rUser.user.username}}], usersProjection, function(err, report) {
         var userMap = {};
     
         report.forEach(function(report) {
