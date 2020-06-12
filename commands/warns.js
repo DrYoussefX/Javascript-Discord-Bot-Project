@@ -22,7 +22,7 @@ module.exports.run = async(bot, message, args) => {
           userMap[report._id] = report.username;
         
         });
-     )
+     })
         //console.log(report)
         if(!message.member.hasPermission('ADMINISTRATOR')) {
           var noperms = new Discord.RichEmbed()
