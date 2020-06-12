@@ -42,8 +42,8 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Logged Infractions")
            .setDescription(report)
             .setColor('#9400D3')
-        const msgs = message.channel.sendEmbed(foundReport)
-        msgs.edit(msgs.content.replace("warnID", "Warn ID"))
+        let found = foundReport.replace("warnID", "Warn ID")
+        const msgs = message.channel.sendEmbed(found)
          
       
         }
