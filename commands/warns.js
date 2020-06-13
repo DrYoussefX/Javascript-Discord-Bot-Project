@@ -49,7 +49,7 @@ module.exports.run = async(bot, message, args) => {
          const replacements = { 'warnID': '**#**', '{': ' ', '}': ' ', 'reason': ' ', 'Type': ' ', ':': ' '};
          const pattern = new RegExp(Object.keys(replacements).join('|'), 'g');
         
-       message.channel.sendEmbed(foundReport) .then(m => m.edit(m.content.replace(pattern, key => replacements[key])));
+       message.channel.send(foundReport) .then(m => m.edit(m.content.replace(pattern, key => replacements[key])));
        
                       
         
