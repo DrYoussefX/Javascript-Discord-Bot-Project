@@ -20,6 +20,7 @@ module.exports.run = async(bot, message, args) => {
     
         report.forEach(function(report) {
           userMap[report._id] = report.username;
+         console.log(report.warnID)
        
         });
         //console.log(report)
