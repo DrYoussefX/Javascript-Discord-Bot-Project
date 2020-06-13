@@ -15,13 +15,13 @@ module.exports.run = async(bot, message, args) => {
         __v: false,
         username: false
     };
-    Report.aggregate([{ $match: {username: rUser.user.username}}], usersProjection, function(err, report) {
+    Report.aggregate({username: rUser.user.username}, usersProjection, function(err, report) {
         var userMap = {};
     
         report.forEach(function(report) {
           userMap[report._id] = report.username;
        
-        })
+        });
         //console.log(report)
         if(!message.member.hasPermission('ADMINISTRATOR')) {
           var noperms = new Discord.RichEmbed()
