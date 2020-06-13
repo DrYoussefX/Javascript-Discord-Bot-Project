@@ -41,15 +41,15 @@ module.exports.run = async(bot, message, args) => {
            .setColor('#9400D3')
             message.channel.sendEmbed(noReport)
         } else if(report) {
-        //  let foundReport = new Discord.RichEmbed()
-           // .setTitle("Logged Infractions")
-       //    .setDescription(report)
-          //  .setColor('#9400D3')
+          let foundReport = new Discord.RichEmbed()
+            .setTitle("Logged Infractions")
+          .setDescription(`**${report}**`)
+            .setColor('#9400D3')
      //   let found = foundReport.content.replace("warnID", "Warn ID")
          const replacements = { 'warnID': '**#**', '{': ' ', '}': ' ', 'reason': ' ', 'Type': ' ', ':': ' '};
          const pattern = new RegExp(Object.keys(replacements).join('|'), 'g');
         
-       message.channel.send(report) .then(m => m.edit(m.content.replace(pattern, key => replacements[key])));
+       message.channel.sendEmbed(foundReport) .then(m => m.edit(m.content.replace(pattern, key => replacements[key])));
        
                       
         
