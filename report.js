@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const reportSchema = mongoose.Schema({
-    _id: String,
-    username: String,
-    userID: String,
-    Type: String,
-    reason: String,
-    rUsername: String,
-    rID: String,
-    time: String,
-    guild: String,
-    warnID: String
+    _id: {type:String},
+    username: {type:String},
+    userID: {type:String},
+    Type: {type:String},
+    reason: {type:String},
+    rUsername: {type:String},
+    rID: {type:String},
+    time: {type:String},
+    guild: {type:String},
+    warnID: {type:String}
 });
 module.exports = mongoose.model("Report", reportSchema)
