@@ -49,7 +49,7 @@ module.exports.run = async(bot, message, args) => {
          const replacements = { 'warnID': '**#**', '{': ' ', '}': ' ', 'reason': ' ', 'Type': ' ', ':': ' '};
          const pattern = new RegExp(Object.keys(replacements).join('|'), 'g');
         
-       message.channel.send('```Infraction ID      Type      Reason\n${report}```') .then(m => m.edit(m.content.replace(pattern, key => replacements[key])));
+       message.channel.send("```Infraction ID      Type      Reason\n" + report +"```") .then(m => m.edit(m.content.replace(pattern, key => replacements[key])));
        
                       
         
