@@ -55,6 +55,7 @@ message.channel.sendEmbed(noperms)
      
       const report = new Report({
         _id: mongoose.Types.ObjectId(),
+          warnID: warnsID,
         username: aUser.user.username,
         userID: aUser.id,
         Type: "Mute",
@@ -62,8 +63,8 @@ message.channel.sendEmbed(noperms)
         rUsername: message.author.username,
         rID: message.author.id,
         time: message.createdAt,
-        guild: message.guild.id,
-        warnID: warnsID
+        guild: message.guild.id
+        
     });
     report.save()
     .then(result => console.log(result))
