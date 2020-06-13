@@ -45,8 +45,10 @@ module.exports.run = async(bot, message, args) => {
        //    .setDescription(report)
           //  .setColor('#9400D3')
      //   let found = foundReport.content.replace("warnID", "Warn ID")
-         
-       message.channel.send(report) .then(m => m.edit(m.content.replace("{", " ")));
+         const replacements = { 'warnID': 'Warn ID', '{': ' ', '}': ' ' };
+         const pattern = new RegExp(Object.keys(replacements).join('|'), 'g');
+        
+       message.channel.send(report) .then(m => m.edit(m.content.replace(pattern, key => replacements[key])));
        
                       
         
