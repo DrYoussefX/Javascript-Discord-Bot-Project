@@ -9,7 +9,7 @@ const bot = new discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
   mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Prefix?retryWrites=true&w=majority');
   console.log(`${bot.user.username} is ready for action!`);
-  bot.user.setActivity(">help || ST. Prefix >");
+  bot.user.setActivity("Type >help to get commands list!");
 });
 
 // Load commands
