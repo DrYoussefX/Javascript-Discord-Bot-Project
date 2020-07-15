@@ -3,16 +3,16 @@ const Report = require("../report.js")
 const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => { 
 var move = args[0]
-var facts = ["Rock", "Paper", "Scissors"];
+var facts = ["rock", "paper", "scissors"];
 var fact = Math.floor(Math.random() * facts.length); 
-  if(move == "Paper") {
-     if(facts[fact] == "Paper") {
+  if(move == "paper") {
+     if(facts[fact] == "paper") {
 message.channel.send("Paper, its a Draw.")
     } else {
-      if(facts[fact] == "Rock") {
+      if(facts[fact] == "rock") {
         message.channel.send("Rock, you won!")
         } else {
-          if(facts[fact] == "Scissors") {
+          if(facts[fact] == "scissors") {
             message.channel.send("Scissors, better luck next time")
             }
           }
