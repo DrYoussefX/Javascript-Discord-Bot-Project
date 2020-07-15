@@ -18,6 +18,7 @@ message.channel.send("Paper, its a Draw.")
           }
       }
   }
+  }
         
 }
 }
