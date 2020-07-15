@@ -17,8 +17,8 @@ message.channel.sendEmbed(noperms)
       } else {
         if(!report) return message.channel.send("This ID is not valid.")
         var idembed = new Discord.RichEmbed()
-      .setTitle("Warn notification")
-        .setDescription(`**Infractions Logged for ${report.username}** (${report.userID})\n**Reason :-** ${report.reason}\n**Infraction done by :-** ${report.rUsername} (${report.rID})\n **Infraction logged at :-** ${report.time}\n**Infraction ID :-**${report.warnID}`)
+      .setTitle(`#${report.warnID}`)
+        .setDescription(`**Infractions Logged for ${report.username}** (${report.userID})\n**Infraction Type :-** ${report.type}\n**Reason :-** ${report.reason}\n**Infraction done by :-** ${report.rUsername} (${report.rID})\n **Infraction logged at :-** ${report.time}\n**Infraction ID :-**${report.warnID}`)
           .setColor('#9400D3')
         message.channel.sendEmbed(idembed);
     }
