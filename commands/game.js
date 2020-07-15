@@ -5,8 +5,20 @@ module.exports.run = async (bot, message, args) => {
 var move = args[0]
 var facts = ["Rock", "Paper", "Scissors"];
 var fact = Math.floor(Math.random() * facts.length); 
-  if(move == facts[fact]) {
-message.channel.send("Stalemate!")
+  if(move == "Paper" {
+     if(facts[fact] == "Paper") {
+message.channel.send("Paper, its a Draw.")
+    } else {
+      if(facts[fact] == "Rock") {
+        message.channel.send("Rock, you won!")
+        } else {
+          if(facts[fact] == "Scissors") {
+            message.channel.send("Scissors, better luck next time")
+            }
+          }
+      }
+  }
+        
 }
 }
 module.exports.help = {
