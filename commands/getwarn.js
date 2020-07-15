@@ -20,7 +20,7 @@ message.channel.sendEmbed(noperms)
         .setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
       .setTitle(`Infraction Number #${report.warnID}`)
         .setDescription(`**Infractions Logged for ${report.username}** (${report.userID})\n**Infraction Type :-** ${report.Type}\n**Reason :-** ${report.reason}\n**Infraction done by :-** ${report.rUsername} (${report.rID})\n **Infraction logged at :-** ${report.time}\n**Infraction ID :-**${report.warnID}`)
-          .setColor('#9400D3')
+          .setColor('#00d5ff')
         message.channel.sendEmbed(idembed);
     }
   })
