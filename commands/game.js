@@ -16,9 +16,7 @@ message.channel.send("Paper, its a Draw.")
             message.channel.send("Scissors, better luck next time")
             }
           }
-      }
-  }
-  }
+      
         
 }
 }
