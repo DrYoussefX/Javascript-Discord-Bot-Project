@@ -5,6 +5,7 @@ module.exports.run = async (bot, message, args) => {
 var move = args[0]
 var facts = ["rock", "paper", "scissors"];
 var fact = Math.floor(Math.random() * facts.length); 
+  if(!move) return message.channel.send("What's your move? [rock, paper, scissors]\n Ex: >play rock")
   if(move == "paper") {
      if(facts[fact] == "paper") {
 message.channel.send("Paper, its a Draw.")
