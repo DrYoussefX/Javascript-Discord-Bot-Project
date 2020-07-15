@@ -20,6 +20,20 @@ message.channel.send("Paper, its a Draw.")
       
         }
 }
+  if(move == "rock") {
+     if(facts[fact] == "rock") {
+message.channel.send("Rock, its a Draw.")
+    } else {
+      if(facts[fact] == "scissors") {
+        message.channel.send("Scissors, you won!")
+        } else {
+          if(facts[fact] == "paper") {
+            message.channel.send("Paper, better luck next time!")
+            }
+          }
+      
+        }
+}
 }
 module.exports.help = {
 name: "play"
