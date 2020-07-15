@@ -3,8 +3,10 @@ const Report = require("../report.js")
 const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => { 
 var move = args[0]
-if(move == "rock") {
-message.channel.send("Paper, I won.")
+var facts = ["Rock", "Paper", "Scissors"];
+var fact = Math.floor(Math.random() * facts.length); message.channel.send(facts[fact]);
+if(move == facts[fact]) {
+message.channel.send("Stalemate!")
 }
 }
 module.exports.help = {
