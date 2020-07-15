@@ -3,7 +3,6 @@ const Report = require("../report.js")
 const mongoose = require("mongoose");
 const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
-const argss = message.content.slice(prefix.length).trim().split(/+/g)
     //await message.delete();
     mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Actionss?retryWrites=true&w=majority');
     let aUser = message.mentions.members.first();
