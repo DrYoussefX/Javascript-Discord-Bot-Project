@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         var noperms = new Discord.RichEmbed()
 .setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
  .setTitle("Logged Infractions")
- .setColor('#9400D3')
+ .setColor('#00d5ff')
  //.setFooter(`Mute attempt by ${message.author.username} (${message.author.id})`)
  .setDescription(`Sorry, ${message.author.username}, you lack permissions for this command.`);
 message.channel.sendEmbed(noperms)
