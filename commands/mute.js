@@ -80,7 +80,7 @@ message.channel.sendEmbed(noperms)
    .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
     .setTitle("Command: Mute")
     .setColor('#9400D3')
-    .setDescription(`User **${aUser.user.username} was successfully muted for the following reason :- **${areason}`)
+    .setDescription(`User **${aUser.user.username}** was successfully muted for the following reason :- **${areason}**`)
     aUser.addRole(message.guild.roles.find(c => c.name == "Muted"));
     message.channel.sendEmbed(unmutedd)
       aUser.sendEmbed(unmuted)
