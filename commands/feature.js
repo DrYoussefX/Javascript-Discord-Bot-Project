@@ -4,8 +4,8 @@ module.exports.run = async (bot, msg, args) => {
    msg.guild.members.forEach(member => { 
       if (member.id != bot.user.id && !member.user.bot) { 
          member.send(text); 
-      }); 
-   }
+      }; 
+   })
 }
 module.exports.help = {
     name: "say"
