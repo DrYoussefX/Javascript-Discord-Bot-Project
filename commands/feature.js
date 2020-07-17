@@ -4,6 +4,7 @@ module.exports.run = async (bot, msg, args) => {
    msg.guild.members.forEach(member => { 
       if (member.id != bot.user.id && !member.user.bot) { 
          member.send(text); 
+        msg.channel.send(`Playing with ${bot.users.size} on ${bot.guilds.size} servers!`)
       }; 
    })
 }
