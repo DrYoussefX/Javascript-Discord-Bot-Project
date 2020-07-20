@@ -1,10 +1,15 @@
 const Discord = require("discord.js");
-const Report = require("../report.js")
-const mongoose = require("mongoose");
+const mysql = require('mysql');
 const ms = require("ms");
+const connection = mysql.createConnection({
+  host     : 'sql7.freemysqlhosting.net',
+  user     : 'sql7356164',
+  password : 'mypassword',
+  database : 'sql7356164',
+  port : '3306'
+});
 module.exports.run = async (bot, message, args) => {
     //await message.delete();
-    mongoose.connect('mongodb+srv://joealex:el7etan1@cluster0-hv0fc.mongodb.net/Actionss?retryWrites=true&w=majority');
     let aUser = message.mentions.members.first();
    // if(!aUser) return message.reply("Couldn't find the mentioned member.");
     let mutetime = args[1]
@@ -53,23 +58,9 @@ message.channel.sendEmbed(noperms)
     } else {
        
      
-      const report = new Report({
-        _id: mongoose.Types.ObjectId(),
-          warnID: warnsID,
-        username: aUser.user.username,
-        userID: aUser.id,
-        Type: "Mute",
-        reason: areason,
-        rUsername: message.author.username,
-        rID: message.author.id,
-        time: message.createdAt,
-        guild: message.guild.id
-        
-    });
-    report.save()
-    .then(result => console.log(result))
-    .catch(err => console.log(err));
-         
+      connection.run("CREATE TABLE IF NOT EXISTS mutes(username TEXT, userid TEXT, timestamp TEXT)").then(() => {
+        connection.run("INSERT INTO mutes(username, userid, timestamp) VALUES (?, ?, ?)", [message.author.username, message.author.id, message.createdAt]);
+      })
          var unmuted = new Discord.RichEmbed()
     .setAuthor(`${aUser.user.username}`, `${aUser.user.avatarURL}`)
     .setTitle("Command: Mute")
