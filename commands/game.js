@@ -1,16 +1,10 @@
-
-
-//COPYRIGHTS RESERVED FOR HAWK ( TWOON BOT )
-  
-
-
 const Discord = require("discord.js");
 const Report = require("../report.js")
 const mongoose = require("mongoose");
 module.exports.run = async (bot, message, args) => { 
 var move = args[0]
 var botmoves = ["rock", "paper", "scissors"];
-var ran = Math.floor(Math.random() * facts.length); 
+var ran = Math.floor(Math.random() * botmoves.length); 
   if(!move) return message.channel.send("What's your move? [rock, paper, scissors]\n Ex: >play rock")
   if(move == "paper") {
      if(botmoves[ran] == "paper") {
